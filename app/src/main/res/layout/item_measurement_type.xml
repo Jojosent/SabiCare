@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_measurement"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@color/surface"
+    app:strokeColor="@color/outline"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Icon -->
+        <TextView
+            android:id="@+id/tv_type_icon"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:gravity="center"
+            android:textSize="26sp"
+            android:background="@drawable/bg_icon_circle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <!-- Name RU -->
+        <TextView
+            android:id="@+id/tv_type_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/on_surface"
+            android:layout_marginStart="14dp"
+            app:layout_constraintStart_toEndOf="@id/tv_type_icon"
+            app:layout_constraintEnd_toStartOf="@id/tv_status"
+            app:layout_constraintTop_toTopOf="@id/tv_type_icon" />
+
+        <!-- Name KZ -->
+        <TextView
+            android:id="@+id/tv_type_name_kz"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/on_surface_variant"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="2dp"
+            app:layout_constraintStart_toEndOf="@id/tv_type_icon"
+            app:layout_constraintEnd_toStartOf="@id/tv_status"
+            app:layout_constraintTop_toBottomOf="@id/tv_type_name" />
+
+        <!-- Last date -->
+        <TextView
+            android:id="@+id/tv_last_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/on_surface_variant"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@id/tv_type_icon"
+            app:layout_constraintEnd_toStartOf="@id/tv_status"
+            app:layout_constraintTop_toBottomOf="@id/tv_type_name_kz" />
+
+        <!-- Last value big -->
+        <TextView
+            android:id="@+id/tv_last_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@id/tv_status"
+            app:layout_constraintTop_toTopOf="@id/tv_type_icon"
+            app:layout_constraintBottom_toBottomOf="@id/tv_type_icon" />
+
+        <!-- Status badge -->
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:textSize="11sp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/bg_status_badge"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_type_icon"
+            app:layout_constraintBottom_toBottomOf="@id/tv_type_icon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

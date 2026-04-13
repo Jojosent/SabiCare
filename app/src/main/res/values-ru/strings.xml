@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SabiCare</string>
+
+    <!-- Bottom Navigation -->
+    <string name="nav_home">Главная</string>
+    <string name="nav_tracker">Трекер</string>
+    <string name="nav_results">Результаты</string>
+    <string name="nav_profile">Профиль</string>
+
+    <!-- Actions -->
+    <string name="add_entry">Добавить запись</string>
+    <string name="add_child">Добавить ребёнка</string>
+    <string name="settings">Настройки</string>
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отмена</string>
+    <string name="delete">Удалить</string>
+    <string name="edit">Редактировать</string>
+    <string name="back">Назад</string>
+
+    <!-- Child -->
+    <string name="child_name">Имя ребёнка</string>
+    <string name="child_birth_date">Дата рождения</string>
+    <string name="child_gender">Пол</string>
+    <string name="gender_male">Мальчик</string>
+    <string name="gender_female">Девочка</string>
+    <string name="child_photo">Фото</string>
+    <string name="child_age_days">%d дней</string>
+    <string name="child_age_weeks">%d недель</string>
+    <string name="child_age_months">%d месяцев</string>
+
+    <!-- Measurement Types -->
+    <string name="type_height">Рост</string>
+    <string name="type_weight">Вес</string>
+    <string name="type_feedings_count">Кормлений в день</string>
+    <string name="type_calories">Калории</string>
+    <string name="type_sleep_duration">Сон</string>
+
+    <!-- Units -->
+    <string name="unit_cm">см</string>
+    <string name="unit_grams">г</string>
+    <string name="unit_times">раз</string>
+    <string name="unit_kcal">ккал</string>
+    <string name="unit_minutes">мин</string>
+
+    <!-- Tracker Status -->
+    <string name="status_due_now">Пора замерить</string>
+    <string name="status_days_left">Следующий через %d дн.</string>
+    <string name="status_overdue">Просрочено на %d дн.</string>
+    <string name="last_measured">Последний замер: %s</string>
+    <string name="no_measurements_yet">Ещё нет данных</string>
+
+    <!-- Results -->
+    <string name="norm_label">Норма</string>
+    <string name="your_value">Ваше значение</string>
+    <string name="export_pdf">Экспорт в PDF</string>
+    <string name="status_normal">Норма ✓</string>
+    <string name="status_below_norm">Ниже нормы ⚠</string>
+    <string name="status_above_norm">Выше нормы ⚠</string>
+    <string name="status_critical">Требует внимания !</string>
+    <string name="no_data_for_chart">Недостаточно данных для графика</string>
+
+    <!-- Home -->
+    <string name="reminders_title">Напоминания</string>
+    <string name="articles_title">Полезные статьи</string>
+    <string name="medications_title">Витамины и препараты</string>
+
+    <!-- Profile -->
+    <string name="my_children">Мои дети</string>
+    <string name="app_settings">Настройки приложения</string>
+    <string name="language">Язык</string>
+    <string name="theme">Тема</string>
+    <string name="notifications">Уведомления</string>
+    <string name="about_app">О приложении</string>
+    <string name="sign_out">Выйти из аккаунта</string>
+    <string name="sign_out_disabled_hint">Вход через аккаунт будет добавлен позже</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title">Добро пожаловать в SabiCare</string>
+    <string name="onboarding_subtitle">Добавьте профиль вашего малыша, чтобы начать</string>
+    <string name="onboarding_add_baby">Добавить малыша</string>
+
+    <!-- Errors / Empty states -->
+    <string name="error_name_required">Введите имя ребёнка</string>
+    <string name="error_date_required">Выберите дату рождения</string>
+    <string name="error_gender_required">Выберите пол</string>
+    <string name="error_value_required">Введите значение</string>
+    <string name="error_invalid_value">Некорректное значение</string>
+
+    <string name="edit_child">Балаңызды өңдеу</string>
+    <string name="onboarding_start">Бастау</string>
+
+</resources>

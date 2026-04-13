@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Primary — slightly lighter in dark -->
+    <color name="primary">#3DBCAD</color>
+    <color name="primary_variant">#2A9D8F</color>
+    <color name="primary_container">#1F5C55</color>
+    <color name="on_primary">#001F1C</color>
+    <color name="on_primary_container">#B2DFDB</color>
+
+    <!-- Secondary -->
+    <color name="secondary">#F4A261</color>
+    <color name="secondary_container">#5C3210</color>
+    <color name="on_secondary">#3A1A00</color>
+    <color name="on_secondary_container">#FFD8B8</color>
+
+    <!-- Tertiary -->
+    <color name="tertiary">#C4B5F4</color>
+    <color name="tertiary_container">#4A3F7A</color>
+
+    <!-- Background and surfaces — DARK -->
+    <color name="background">#0F1416</color>
+    <color name="surface">#1A2126</color>
+    <color name="surface_variant">#242E35</color>
+    <color name="on_background">#E4E8EA</color>
+    <color name="on_surface">#E4E8EA</color>
+    <color name="on_surface_variant">#9BA8B0</color>
+    <color name="outline">#2E3A42</color>
+    <color name="outline_variant">#1E2A30</color>
+
+    <!-- Status — same -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FFA726</color>
+    <color name="error">#EF5350</color>
+    <color name="info">#29B6F6</color>
+
+    <!-- Bottom nav -->
+    <color name="bottom_nav_active">#3DBCAD</color>
+    <color name="bottom_nav_inactive">#6B7A82</color>
+
+    <!-- Chart — same -->
+    <color name="chart_height">#3DBCAD</color>
+    <color name="chart_weight">#F4A261</color>
+    <color name="chart_feedings">#C4B5F4</color>
+    <color name="chart_calories">#66BB6A</color>
+    <color name="chart_sleep">#4FC3F7</color>
+
+    <!-- Progress -->
+    <color name="progress_good">#4CAF50</color>
+    <color name="progress_warning">#FFA726</color>
+    <color name="progress_danger">#EF5350</color>
+
+    <!-- Card -->
+    <color name="card_background">#1A2126</color>
+    <color name="chip_background">#1F3530</color>
+
+</resources>

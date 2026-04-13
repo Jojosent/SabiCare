@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SabiCare</string>
+
+    <string name="nav_home">Басты бет</string>
+    <string name="nav_tracker">Трекер</string>
+    <string name="nav_results">Нәтижелер</string>
+    <string name="nav_profile">Профиль</string>
+
+    <string name="add_entry">Жазба қосу</string>
+    <string name="add_child">Баланы қосу</string>
+    <string name="settings">Баптаулар</string>
+    <string name="save">Сақтау</string>
+    <string name="cancel">Бас тарту</string>
+    <string name="delete">Өшіру</string>
+    <string name="edit">Өңдеу</string>
+    <string name="back">Артқа</string>
+
+    <string name="child_name">Баланың есімі</string>
+    <string name="child_birth_date">Туған күні</string>
+    <string name="child_gender">Жынысы</string>
+    <string name="gender_male">Ұл</string>
+    <string name="gender_female">Қыз</string>
+    <string name="child_photo">Фото</string>
+    <string name="child_age_days">%d күн</string>
+    <string name="child_age_weeks">%d апта</string>
+    <string name="child_age_months">%d ай</string>
+
+    <string name="type_height">Бойы</string>
+    <string name="type_weight">Салмағы</string>
+    <string name="type_feedings_count">Күндізгі тамақтандыру саны</string>
+    <string name="type_calories">Калориялар</string>
+    <string name="type_sleep_duration">Ұйқы</string>
+
+    <string name="unit_cm">см</string>
+    <string name="unit_grams">г</string>
+    <string name="unit_times">рет</string>
+    <string name="unit_kcal">ккал</string>
+    <string name="unit_minutes">мин</string>
+
+    <string name="status_due_now">Өлшеу уақыты келді</string>
+    <string name="status_days_left">Келесі өлшеуге %d күн қалды</string>
+    <string name="status_overdue">Өлшеу уақыты %d күнге кешікті</string>
+    <string name="last_measured">Соңғы өлшеу: %s</string>
+    <string name="no_measurements_yet">Деректер әлі жоқ</string>
+
+    <string name="norm_label">Қалыпты жағдай (Норма)</string>
+    <string name="your_value">Сіздің көрсеткішіңіз</string>
+    <string name="export_pdf">PDF-ке экспорттау</string>
+    <string name="status_normal">Қалыпты ✓</string>
+    <string name="status_below_norm">Нормадан төмен ⚠</string>
+    <string name="status_above_norm">Нормадан жоғары ⚠</string>
+    <string name="status_critical">Назар аударуды қажет етеді !</string>
+    <string name="no_data_for_chart">График үшін деректер жеткіліксіз</string>
+
+    <string name="reminders_title">Еске салғыштар</string>
+    <string name="articles_title">Пайдалы мақалалар</string>
+    <string name="medications_title">Дәрумендер мен дәрі-дәрмектер</string>
+
+    <string name="my_children">Менің балаларым</string>
+    <string name="app_settings">Қосымша баптаулары</string>
+    <string name="language">Тіл</string>
+    <string name="theme">Тақырып</string>
+    <string name="notifications">Хабарландырулар</string>
+    <string name="about_app">Қосымша туралы</string>
+    <string name="sign_out">Аккаунттан шығу</string>
+    <string name="sign_out_disabled_hint">Аккаунт арқылы кіру кейінірек қосылады</string>
+
+    <string name="onboarding_title">SabiCare қосымшасына қош келдіңіз</string>
+    <string name="onboarding_subtitle">Бастау үшін балаңыздың профилін қосыңыз</string>
+    <string name="onboarding_add_baby">Бөпені қосу</string>
+    <string name="onboarding_start">Бастау</string>
+
+    <string name="error_name_required">Баланың есімін енгізіңіз</string>
+    <string name="error_date_required">Туған күнін таңдаңыз</string>
+    <string name="error_gender_required">Жынысын таңдаңыз</string>
+    <string name="error_value_required">Мәнді енгізіңіз</string>
+    <string name="error_invalid_value">Қате мән</string>
+
+    <string name="edit_child">Бала мәліметтерін өңдеу</string>
+
+</resources>
