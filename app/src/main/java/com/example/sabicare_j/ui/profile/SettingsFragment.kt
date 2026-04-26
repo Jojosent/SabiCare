@@ -1,14 +1,18 @@
 package com.example.sabicare_j.ui.profile
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.edit
 import androidx.fragment.app.Fragment
+import com.example.sabicare_j.R
 import com.example.sabicare_j.databinding.FragmentSettingsBinding
 import com.example.sabicare_j.ui.main.MainActivity
 import com.example.sabicare_j.utils.LocaleHelper
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.auth.FirebaseAuth
 
 class SettingsFragment : Fragment() {
 
@@ -31,11 +35,12 @@ class SettingsFragment : Fragment() {
         setupLanguageSelector()
         setupNotificationsToggle()
         setupAbout()
+        setupSignOut()
     }
 
     private fun loadCurrentSettings() {
         val prefs = requireContext()
-            .getSharedPreferences("sabicare_prefs_simple", android.content.Context.MODE_PRIVATE)
+            .getSharedPreferences("sabicare_prefs_simple", Context.MODE_PRIVATE)
 
         // Show current theme
         val theme = prefs.getString("theme", "system") ?: "system"
@@ -70,10 +75,10 @@ class SettingsFragment : Fragment() {
 
                     // Save to prefs
                     requireContext()
-                        .getSharedPreferences("sabicare_prefs_simple", android.content.Context.MODE_PRIVATE)
-                        .edit()
-                        .putString("theme", selectedTheme)
-                        .apply()
+                        .getSharedPreferences("sabicare_prefs_simple", Context.MODE_PRIVATE)
+                        .edit {
+                            putString("theme", selectedTheme)
+                        }
 
                     // Apply immediately
                     val mode = when (selectedTheme) {
@@ -117,10 +122,10 @@ class SettingsFragment : Fragment() {
     private fun setupNotificationsToggle() {
         binding.switchNotifications.setOnCheckedChangeListener { _, isChecked ->
             requireContext()
-                .getSharedPreferences("sabicare_prefs_simple", android.content.Context.MODE_PRIVATE)
-                .edit()
-                .putBoolean("notifications_enabled", isChecked)
-                .apply()
+                .getSharedPreferences("sabicare_prefs_simple", Context.MODE_PRIVATE)
+                .edit {
+                    putBoolean("notifications_enabled", isChecked)
+                }
         }
     }
 
@@ -135,6 +140,25 @@ class SettingsFragment : Fragment() {
                             "© 2024 SabiCare"
                 )
                 .setPositiveButton("Жабу", null)
+                .show()
+        }
+    }
+
+    private fun setupSignOut() {
+        binding.btnSignOut.isEnabled = true
+        binding.btnSignOut.text = getString(R.string.sign_out)
+        binding.btnSignOut.setOnClickListener {
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Шығу")
+                .setMessage("Аккаунттан шыққыңыз келе ме?")
+                .setPositiveButton("Иә") { _, _ ->
+                    FirebaseAuth.getInstance().signOut()
+                    startActivity(Intent(requireContext(),
+                        com.example.sabicare_j.ui.auth.LoginActivity::class.java).apply {
+                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    })
+                }
+                .setNegativeButton("Жоқ", null)
                 .show()
         }
     }

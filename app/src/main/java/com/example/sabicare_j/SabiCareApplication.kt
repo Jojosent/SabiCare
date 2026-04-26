@@ -22,7 +22,8 @@ class SabiCareApplication : Application() {
     }
 
     override fun attachBaseContext(base: Context) {
-        val lang = LocaleHelper.getSavedLocale(base)
+        // default тіл "kk" (қазақша)
+        val lang = LocaleHelper.getSavedLocale(base) ?: "kk"
         super.attachBaseContext(LocaleHelper.applyLocale(base, lang))
     }
 

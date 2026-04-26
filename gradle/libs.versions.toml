@@ -1,4 +1,5 @@
 [versions]
+firebase-bom = "33.1.0"
 agp = "9.0.1" # Changed from 9.0.1 (See note below)
 kotlin = "2.2.10"
 coreKtx = "1.12.0" # Changed from 1.18.0 (See note below)
@@ -19,6 +20,9 @@ datastore = "1.0.0"
 room3CommonJvm = "3.0.0-alpha02"
 
 [libraries]
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth-ktx" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore-ktx" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -53,5 +57,6 @@ itextg = { group = "com.itextpdf", name = "itextg", version = "5.5.10" }
 androidx-room3-common-jvm = { group = "androidx.room3", name = "room3-common-jvm", version.ref = "room3CommonJvm" }
 
 [plugins]
+google-services = { id = "com.google.gms.google-services", version = "4.4.2" }
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
