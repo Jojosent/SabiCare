@@ -32,6 +32,22 @@
         </provider>
 
         <activity
+            android:name="com.example.sabicare_j.ui.splash.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.SabiCare.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.example.sabicare_j.ui.auth.LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.SabiCare.NoActionBar">
+        </activity>
+
+        <activity
             android:name="com.example.sabicare_j.ui.onboarding.OnboardingActivity"
             android:exported="false"
             android:theme="@style/Theme.SabiCare.NoActionBar" />
@@ -41,10 +57,6 @@
             android:exported="true"
             android:theme="@style/Theme.SabiCare.NoActionBar"
             android:windowSoftInputMode="adjustResize">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
     </application>

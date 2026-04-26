@@ -44,6 +44,12 @@
         <item name="android:windowLightStatusBar">true</item>
 
     </style>
+    <style name="Theme.SabiCare.Splash" parent="Theme.SabiCare.NoActionBar">
+        <item name="android:windowBackground">@color/primary</item>
+        <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:navigationBarColor">@color/primary</item>
+    </style>
+
 
     <style name="Theme.SabiCare.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -135,6 +141,11 @@
         <item name="boxCornerRadiusBottomEnd">16dp</item>
         <item name="boxStrokeColor">@color/outline</item>
         <item name="hintTextColor">@color/on_surface_variant</item>
+    </style>
+
+    <style name="CircleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style>
 
 </resources>

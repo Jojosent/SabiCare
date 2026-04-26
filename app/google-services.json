@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "829149888901",
+    "project_id": "sabicare-ecdc6",
+    "storage_bucket": "sabicare-ecdc6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829149888901:android:439b6d9832b2b7052904ec",
+        "android_client_info": {
+          "package_name": "com.example.sabicare_j"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5Uo2b0BgZctWLdOHGHTanJ_XbZyB2LIM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
