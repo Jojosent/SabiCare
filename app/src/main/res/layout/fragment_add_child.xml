@@ -3,100 +3,203 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@color/background"
     android:fitsSystemWindows="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp">
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Бала қосу"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="@color/on_background"
-            android:layout_marginBottom="24dp" />
+        <!-- Toolbar -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Бала қосу"
+            app:navigationIcon="@drawable/ic_back"
+            app:titleTextColor="@color/on_background"
+            android:background="@color/background" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_name"
-            style="@style/Widget.SabiCare.TextInputLayout"
+        <!-- Avatar section -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="Баланың аты">
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="24dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_name"
-                android:layout_width="match_parent"
+            <FrameLayout
+                android:layout_width="88dp"
+                android:layout_height="88dp">
+
+                <ImageView
+                    android:id="@+id/ivChildAvatar"
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:src="@drawable/ic_child_placeholder"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/circle_avatar_bg"
+                    android:clipToOutline="true" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnPickPhoto"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="bottom|end"
+                    app:fabSize="mini"
+                    app:srcCompat="@drawable/ic_camera"
+                    app:backgroundTint="@color/primary"
+                    app:tint="@color/on_primary"
+                    app:maxImageSize="14dp" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvPhotoHint"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName|textCapWords" />
+                android:text="Фото қосу"
+                android:textSize="13sp"
+                android:textColor="@color/primary"
+                android:layout_marginTop="8dp" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_birth_date"
-            style="@style/Widget.SabiCare.TextInputLayout"
+        <!-- Form card -->
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="Туылған күні"
-            app:endIconMode="custom"
-            app:endIconDrawable="@drawable/ic_calendar">
+            android:layout_marginHorizontal="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/surface">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_birth_date"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:focusable="false"
-                android:inputType="none"
-                android:cursorVisible="false" />
+                android:orientation="vertical"
+                android:padding="20dp">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <!-- Name -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilChildName"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="@string/child_name"
+                    app:startIconDrawable="@drawable/ic_person"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Жынысы"
-            android:textSize="14sp"
-            android:textColor="@color/on_surface_variant"
-            android:layout_marginBottom="8dp" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etChildName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName|textCapWords"
+                        android:imeOptions="actionNext" />
 
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/chip_group_gender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            app:singleSelection="true">
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_male"
-                style="@style/Widget.Material3.Chip.Filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="👦 Ұл бала" />
+                <!-- Birth date -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilBirthDate"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:hint="@string/child_birth_date"
+                    app:startIconDrawable="@drawable/ic_calendar"
+                    app:endIconMode="custom"
+                    app:endIconDrawable="@drawable/ic_calendar"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp">
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_female"
-                style="@style/Widget.Material3.Chip.Filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="👧 Қыз бала" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etBirthDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:inputType="none"
+                        android:cursorVisible="false" />
 
-        </com.google.android.material.chip.ChipGroup>
+                </com.google.android.material.textfield.TextInputLayout>
 
+                <!-- Gender -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/child_gender"
+                    android:textSize="13sp"
+                    android:textColor="@color/on_surface_variant"
+                    android:layout_marginBottom="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="4dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnMale"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="👦 Ұл"
+                        app:cornerRadius="12dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnFemale"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="👧 Қыз"
+                        app:cornerRadius="12dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Save button -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_save"
+            android:id="@+id/btnSave"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="Сақтау"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/save"
             android:textSize="16sp"
             app:cornerRadius="16dp" />
+
+        <!-- Delete button (only in edit mode, shown programmatically) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDelete"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="32dp"
+            android:text="Баланы жою"
+            android:textColor="@color/error"
+            app:cornerRadius="16dp"
+            app:strokeColor="@color/error"
+            app:icon="@drawable/ic_delete"
+            app:iconTint="@color/error"
+            android:visibility="gone" />
 
     </LinearLayout>
 

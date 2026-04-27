@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="24dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="16dp">
+
+    <!-- Description -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PDF есебіне қосылатын өлшемдер кезеңін белгіленіз."
+        android:textSize="13sp"
+        android:textColor="@color/on_surface_variant"
+        android:layout_marginBottom="20dp" />
+
+    <!-- FROM date row -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="БАСТАПҚЫ КҮН"
+        android:textSize="10sp"
+        android:letterSpacing="0.10"
+        android:textColor="@color/primary"
+        android:textStyle="bold"
+        android:layout_marginBottom="6dp" />
+
+    <LinearLayout
+        android:id="@+id/btnPickFrom"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_date_picker_field"
+        android:paddingHorizontal="16dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_calendar"
+            app:tint="@color/primary"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:id="@+id/tvDateFrom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/on_surface" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_chevron_right"
+            app:tint="@color/on_surface_variant" />
+
+    </LinearLayout>
+
+    <!-- TO date row -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="СОҢҒЫ КҮН"
+        android:textSize="10sp"
+        android:letterSpacing="0.10"
+        android:textColor="@color/primary"
+        android:textStyle="bold"
+        android:layout_marginBottom="6dp" />
+
+    <LinearLayout
+        android:id="@+id/btnPickTo"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_date_picker_field"
+        android:paddingHorizontal="16dp">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_calendar"
+            app:tint="@color/primary"
+            android:layout_marginEnd="12dp" />
+
+        <TextView
+            android:id="@+id/tvDateTo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/on_surface" />
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_chevron_right"
+            app:tint="@color/on_surface_variant" />
+
+    </LinearLayout>
+
+    <!-- Quick-range chips -->
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:singleSelection="true"
+        app:selectionRequired="false">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip7days"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7 күн" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip30days"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30 күн"
+            android:checked="true" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip3months"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 ай" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip6months"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6 ай" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipAllTime"
+            style="@style/Widget.Material3.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Барлық уақыт" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+</LinearLayout>

@@ -72,6 +72,7 @@
     <string name="theme">Тема</string>
     <string name="notifications">Уведомления</string>
     <string name="about_app">О приложении</string>
+    <string name="about">О приложении</string>
     <string name="sign_out">Выйти из аккаунта</string>
     <string name="sign_out_disabled_hint">Вход через аккаунт будет добавлен позже</string>
 
