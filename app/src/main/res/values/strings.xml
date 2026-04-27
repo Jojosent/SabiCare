@@ -2,6 +2,8 @@
 <resources>
     <string name="app_name">SabiCare</string>
 
+    <string name="about">О приложении</string>
+
     <!-- Bottom Navigation -->
     <string name="nav_home">Главная</string>
     <string name="nav_tracker">Трекер</string>
@@ -72,7 +74,6 @@
     <string name="theme">Тема</string>
     <string name="notifications">Уведомления</string>
     <string name="about_app">О приложении</string>
-    <string name="about">О приложении</string>
     <string name="sign_out">Выйти из аккаунта</string>
     <string name="sign_out_disabled_hint">Вход через аккаунт будет добавлен позже</string>
 
@@ -80,6 +81,7 @@
     <string name="onboarding_title">Добро пожаловать в SabiCare</string>
     <string name="onboarding_subtitle">Добавьте профиль вашего малыша, чтобы начать</string>
     <string name="onboarding_add_baby">Добавить малыша</string>
+    <string name="onboarding_start">Начать</string>
 
     <!-- Errors / Empty states -->
     <string name="error_name_required">Введите имя ребёнка</string>
@@ -88,7 +90,6 @@
     <string name="error_value_required">Введите значение</string>
     <string name="error_invalid_value">Некорректное значение</string>
 
-    <string name="edit_child">Балаңызды өңдеу</string>
-    <string name="onboarding_start">Бастау</string>
+    <string name="edit_child">Редактировать ребёнка</string>
 
 </resources>
