@@ -8,7 +8,6 @@ import androidx.core.content.FileProvider
 import com.example.sabicare_j.data.local.entities.ChildEntity
 import com.example.sabicare_j.data.local.entities.MeasurementType
 import com.example.sabicare_j.ui.results.ResultCardState
-import com.example.sabicare_j.utils.GrowthStandards
 import java.io.File
 import java.io.FileOutputStream
 import java.text.SimpleDateFormat
@@ -22,7 +21,9 @@ object PdfGenerator {
     fun generate(
         context: Context,
         child: ChildEntity,
-        cards: List<ResultCardState>
+        cards: List<ResultCardState>,
+        from: Long,
+        to: Long
     ): File {
         val document = PdfDocument()
         val pageWidth = 595   // A4 width in points
