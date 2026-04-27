@@ -18,50 +18,51 @@
         android:gravity="center"
         android:padding="32dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="👶"
-            android:textSize="56sp" />
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_logo" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SabiCare"
-            android:textSize="32sp"
+            android:textSize="26sp"
             android:textStyle="bold"
             android:textColor="@color/on_primary"
-            android:layout_marginTop="12dp" />
+            android:letterSpacing="-0.02"
+            android:layout_marginTop="16dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Сіздің балаңыздың дамуын бақылаңыз"
+            android:text="@string/app_tagline"
             android:textSize="14sp"
-            android:textColor="#B2FFFFFF"
+            android:textColor="#B3FFFFFF"
             android:gravity="center"
             android:layout_marginTop="8dp" />
 
     </LinearLayout>
 
     <!-- Bottom card with form -->
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:cardCornerRadius="32dp"
+        app:cardCornerRadius="28dp"
         app:cardElevation="0dp"
         app:cardBackgroundColor="@color/background">
 
-        <!-- Fragment container — AddChildFragment is placed here -->
+        <!-- Fragment container - AddChildFragment is placed here -->
         <FrameLayout
             android:id="@+id/onboarding_fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:minHeight="400dp" />
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

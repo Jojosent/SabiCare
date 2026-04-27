@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Pill/vitamin icon -->
+    <path
+        android:fillColor="@color/icon_primary"
+        android:pathData="M4.22,11.29l6.07,6.07c1.95,1.95 5.12,1.95 7.07,0l2.36,-2.36c1.95,-1.95 1.95,-5.12 0,-7.07l-6.07,-6.07c-1.95,-1.95 -5.12,-1.95 -7.07,0L4.22,4.22c-1.95,1.95 -1.95,5.12 0,7.07zM5.64,5.64c1.17,-1.17 3.07,-1.17 4.24,0l6.07,6.07c1.17,1.17 1.17,3.07 0,4.24l-2.36,2.36c-1.17,1.17 -3.07,1.17 -4.24,0L3.28,12.24c-1.17,-1.17 -1.17,-3.07 0,-4.24l2.36,-2.36z"/>
+    <path
+        android:fillColor="@color/icon_primary"
+        android:pathData="M8.11,11.53l4.95,4.95 1.41,-1.41 -4.95,-4.95z"/>
+</vector>
