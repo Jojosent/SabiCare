@@ -18,8 +18,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingHorizontal="20dp"
-            android:paddingTop="16dp"
-            android:paddingBottom="8dp">
+            android:paddingTop="20dp"
+            android:paddingBottom="12dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,10 +36,11 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Нәтижелер"
-                        android:textSize="26sp"
+                        android:text="@string/results"
+                        android:textSize="24sp"
                         android:textStyle="bold"
-                        android:textColor="@color/on_background" />
+                        android:textColor="@color/on_background"
+                        android:letterSpacing="-0.02" />
 
                     <TextView
                         android:id="@+id/tv_child_name"
@@ -47,7 +48,7 @@
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
                         android:textColor="@color/on_surface_variant"
-                        android:layout_marginTop="2dp" />
+                        android:layout_marginTop="4dp" />
 
                 </LinearLayout>
 
@@ -59,6 +60,7 @@
                     android:layout_height="40dp"
                     android:text="PDF"
                     android:textSize="13sp"
+                    android:textAllCaps="false"
                     app:icon="@drawable/ic_pdf"
                     app:iconSize="16dp"
                     app:cornerRadius="12dp" />

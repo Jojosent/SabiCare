@@ -1,57 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Primary — slightly lighter in dark -->
-    <color name="primary">#3DBCAD</color>
-    <color name="primary_variant">#2A9D8F</color>
-    <color name="primary_container">#1F5C55</color>
-    <color name="on_primary">#001F1C</color>
-    <color name="on_primary_container">#B2DFDB</color>
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- SabiCare Dark Theme - Modern Minimalist                         -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
 
-    <!-- Secondary -->
-    <color name="secondary">#F4A261</color>
-    <color name="secondary_container">#5C3210</color>
-    <color name="on_secondary">#3A1A00</color>
-    <color name="on_secondary_container">#FFD8B8</color>
+    <!-- Primary - Lighter teal for dark mode -->
+    <color name="primary">#14B8A6</color>
+    <color name="primary_variant">#2DD4BF</color>
+    <color name="primary_container">#134E4A</color>
+    <color name="on_primary">#042F2E</color>
+    <color name="on_primary_container">#CCFBF1</color>
+
+    <!-- Secondary - Brighter coral for dark mode -->
+    <color name="secondary">#FB923C</color>
+    <color name="secondary_variant">#FDBA74</color>
+    <color name="secondary_container">#7C2D12</color>
+    <color name="on_secondary">#431407</color>
+    <color name="on_secondary_container">#FED7AA</color>
 
     <!-- Tertiary -->
-    <color name="tertiary">#C4B5F4</color>
-    <color name="tertiary_container">#4A3F7A</color>
+    <color name="tertiary">#818CF8</color>
+    <color name="tertiary_container">#3730A3</color>
 
-    <!-- Background and surfaces — DARK -->
-    <color name="background">#0F1416</color>
-    <color name="surface">#1A2126</color>
-    <color name="surface_variant">#242E35</color>
-    <color name="on_background">#E4E8EA</color>
-    <color name="on_surface">#E4E8EA</color>
-    <color name="on_surface_variant">#9BA8B0</color>
-    <color name="outline">#2E3A42</color>
-    <color name="outline_variant">#1E2A30</color>
+    <!-- Status Colors -->
+    <color name="success">#34D399</color>
+    <color name="success_container">#064E3B</color>
+    <color name="warning">#FBBF24</color>
+    <color name="warning_container">#78350F</color>
+    <color name="error">#F87171</color>
+    <color name="error_container">#7F1D1D</color>
+    <color name="info">#60A5FA</color>
+    <color name="info_container">#1E3A8A</color>
 
-    <!-- Status — same -->
-    <color name="success">#4CAF50</color>
-    <color name="warning">#FFA726</color>
-    <color name="error">#EF5350</color>
-    <color name="info">#29B6F6</color>
+    <!-- Surface & Background -->
+    <color name="background">#09090B</color>
+    <color name="surface">#18181B</color>
+    <color name="surface_variant">#27272A</color>
+    <color name="surface_elevated">#27272A</color>
+    <color name="on_background">#FAFAFA</color>
+    <color name="on_surface">#FAFAFA</color>
+    <color name="on_surface_variant">#A1A1AA</color>
+    <color name="outline">#3F3F46</color>
+    <color name="outline_variant">#52525B</color>
 
-    <!-- Bottom nav -->
-    <color name="bottom_nav_active">#3DBCAD</color>
-    <color name="bottom_nav_inactive">#6B7A82</color>
+    <!-- Bottom Nav Colors -->
+    <color name="bottom_nav_active">#14B8A6</color>
+    <color name="bottom_nav_inactive">#71717A</color>
 
-    <!-- Chart — same -->
-    <color name="chart_height">#3DBCAD</color>
-    <color name="chart_weight">#F4A261</color>
-    <color name="chart_feedings">#C4B5F4</color>
-    <color name="chart_calories">#66BB6A</color>
-    <color name="chart_sleep">#4FC3F7</color>
+    <!-- Card & Chip -->
+    <color name="card_background">#18181B</color>
+    <color name="chip_background">#27272A</color>
+    <color name="chip_selected">#134E4A</color>
 
-    <!-- Progress -->
-    <color name="progress_good">#4CAF50</color>
-    <color name="progress_warning">#FFA726</color>
-    <color name="progress_danger">#EF5350</color>
+    <!-- Chart Colors -->
+    <color name="chart_height">#14B8A6</color>
+    <color name="chart_weight">#FB923C</color>
+    <color name="chart_feedings">#A78BFA</color>
+    <color name="chart_calories">#34D399</color>
+    <color name="chart_sleep">#60A5FA</color>
 
-    <!-- Card -->
-    <color name="card_background">#1A2126</color>
-    <color name="chip_background">#1F3530</color>
+    <!-- Progress Bar -->
+    <color name="progress_good">#34D399</color>
+    <color name="progress_warning">#FBBF24</color>
+    <color name="progress_danger">#F87171</color>
+
+    <!-- Icon tints -->
+    <color name="icon_primary">#14B8A6</color>
+    <color name="icon_secondary">#A1A1AA</color>
+    <color name="icon_on_surface">#D4D4D8</color>
+
+    <!-- Gender colors -->
+    <color name="gender_male">#60A5FA</color>
+    <color name="gender_female">#F472B6</color>
 
 </resources>

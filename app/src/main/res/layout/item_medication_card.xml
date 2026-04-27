@@ -2,10 +2,10 @@
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="180dp"
+    android:layout_width="160dp"
     android:layout_height="wrap_content"
     android:layout_marginEnd="12dp"
-    app:cardCornerRadius="20dp"
+    app:cardCornerRadius="16dp"
     app:cardElevation="0dp"
     app:cardBackgroundColor="@color/primary_container"
     app:strokeWidth="0dp">
@@ -16,22 +16,34 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/tv_emoji"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:gravity="center"
-            android:textSize="26sp"
-            android:background="@drawable/bg_circle_white_translucent"
-            android:layout_marginBottom="10dp" />
+        <!-- Icon container -->
+        <FrameLayout
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginBottom="12dp">
+            <View
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_circle_white_translucent" />
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_vitamin"
+                app:tint="@color/on_primary_container" />
+        </FrameLayout>
 
         <TextView
             android:id="@+id/tv_age_range"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="11sp"
+            android:textSize="10sp"
             android:textColor="@color/on_primary_container"
             android:textStyle="bold"
+            android:textAllCaps="true"
+            android:letterSpacing="0.05"
+            android:alpha="0.7"
             android:layout_marginBottom="4dp" />
 
         <TextView
@@ -41,7 +53,9 @@
             android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="@color/on_primary_container"
-            android:layout_marginBottom="4dp" />
+            android:layout_marginBottom="4dp"
+            android:maxLines="2"
+            android:ellipsize="end" />
 
         <TextView
             android:id="@+id/tv_description"
@@ -49,7 +63,8 @@
             android:layout_height="wrap_content"
             android:textSize="11sp"
             android:textColor="@color/on_primary_container"
-            android:maxLines="3"
+            android:alpha="0.8"
+            android:maxLines="2"
             android:ellipsize="end" />
 
     </LinearLayout>
