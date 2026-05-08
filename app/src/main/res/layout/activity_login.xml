@@ -28,35 +28,39 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="16dp" />
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_logo" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SabiCare"
-            android:textSize="34sp"
+            android:textSize="28sp"
             android:textStyle="bold"
             android:textColor="@color/on_primary"
-            android:layout_marginTop="12dp" />
+            android:letterSpacing="-0.02"
+            android:layout_marginTop="16dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Балаңыздың дамуын бақылаңыз"
+            android:text="@string/app_tagline"
             android:textSize="14sp"
-            android:textColor="#B2FFFFFF"
+            android:textColor="#B3FFFFFF"
             android:gravity="center"
             android:layout_marginTop="8dp" />
     </LinearLayout>
 
     <!-- BOTTOM: Card with tabs -->
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:cardCornerRadius="32dp"
+        app:cardCornerRadius="28dp"
         app:cardElevation="0dp"
         app:cardBackgroundColor="@color/background">
 
@@ -79,8 +83,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Кіру"
+                    android:text="@string/login"
                     android:textSize="14sp"
+                    android:textAllCaps="false"
                     android:background="@drawable/bg_tab_selected"
                     android:textColor="@color/on_primary" />
 
@@ -89,8 +94,9 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Тіркелу"
+                    android:text="@string/register"
                     android:textSize="14sp"
+                    android:textAllCaps="false"
                     android:background="@android:color/transparent"
                     android:textColor="@color/on_surface_variant" />
             </LinearLayout>
@@ -101,13 +107,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="24dp">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    style="@style/Widget.SabiCare.TextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Email">
+                    android:hint="Email"
+                    app:startIconDrawable="@drawable/ic_email"
+                    app:startIconTint="@color/on_surface_variant">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etLoginEmail"
                         android:layout_width="match_parent"
@@ -116,12 +124,15 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    style="@style/Widget.SabiCare.TextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Құпия сөз"
-                    android:layout_marginTop="12dp"
-                    app:passwordToggleEnabled="true">
+                    android:hint="@string/password"
+                    android:layout_marginTop="16dp"
+                    app:startIconDrawable="@drawable/ic_lock"
+                    app:startIconTint="@color/on_surface_variant"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/on_surface_variant">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etLoginPassword"
                         android:layout_width="match_parent"
@@ -131,11 +142,12 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnLogin"
+                    style="@style/Widget.SabiCare.Button.Primary"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
-                    android:text="Кіру"
-                    android:layout_marginTop="20dp"
-                    app:cornerRadius="16dp" />
+                    android:text="@string/login"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="24dp" />
             </LinearLayout>
 
             <!-- REGISTER FORM -->
@@ -144,14 +156,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="24dp"
                 android:visibility="gone">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    style="@style/Widget.SabiCare.TextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Аты-жөніңіз">
+                    android:hint="@string/your_name"
+                    app:startIconDrawable="@drawable/ic_person"
+                    app:startIconTint="@color/on_surface_variant">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etRegisterName"
                         android:layout_width="match_parent"
@@ -160,11 +174,13 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    style="@style/Widget.SabiCare.TextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Email"
-                    android:layout_marginTop="12dp">
+                    android:layout_marginTop="16dp"
+                    app:startIconDrawable="@drawable/ic_email"
+                    app:startIconTint="@color/on_surface_variant">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etRegisterEmail"
                         android:layout_width="match_parent"
@@ -173,12 +189,15 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    style="@style/Widget.SabiCare.TextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Құпия сөз"
-                    android:layout_marginTop="12dp"
-                    app:passwordToggleEnabled="true">
+                    android:hint="@string/password"
+                    android:layout_marginTop="16dp"
+                    app:startIconDrawable="@drawable/ic_lock"
+                    app:startIconTint="@color/on_surface_variant"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/on_surface_variant">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etRegisterPassword"
                         android:layout_width="match_parent"
@@ -187,12 +206,15 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    style="@style/Widget.SabiCare.TextInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Құпия сөзді қайталаңыз"
-                    android:layout_marginTop="12dp"
-                    app:passwordToggleEnabled="true">
+                    android:hint="@string/confirm_password"
+                    android:layout_marginTop="16dp"
+                    app:startIconDrawable="@drawable/ic_lock"
+                    app:startIconTint="@color/on_surface_variant"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/on_surface_variant">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etRegisterConfirm"
                         android:layout_width="match_parent"
@@ -202,24 +224,26 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnRegister"
+                    style="@style/Widget.SabiCare.Button.Primary"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
-                    android:text="Тіркелу"
-                    android:layout_marginTop="20dp"
-                    app:cornerRadius="16dp" />
+                    android:text="@string/register"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="24dp" />
             </LinearLayout>
 
             <!-- Progress -->
             <ProgressBar
                 android:id="@+id/progressBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
+                android:indeterminateTint="@color/primary"
                 android:visibility="gone" />
 
-            <View android:layout_width="match_parent" android:layout_height="8dp" />
+            <View android:layout_width="match_parent" android:layout_height="16dp" />
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

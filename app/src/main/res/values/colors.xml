@@ -2,71 +2,88 @@
 <resources>
 
     <!-- ═══════════════════════════════════════════════════════════════ -->
-    <!-- SabiCare Brand Colors                                           -->
-    <!-- Primary: Soft Teal — calming, trusted, medical feel             -->
-    <!-- Accent: Warm Peach — warmth of parenthood                       -->
+    <!-- SabiCare Modern Minimalist Color Palette                        -->
+    <!-- Primary: Deep Teal — professional, calm, trustworthy            -->
+    <!-- Neutral: Warm grays with subtle warmth                          -->
+    <!-- Accent: Soft coral for warmth and care                          -->
     <!-- ═══════════════════════════════════════════════════════════════ -->
 
-    <!-- Primary Teal -->
-    <color name="primary">#2A9D8F</color>
-    <color name="primary_variant">#1F7A6E</color>
-    <color name="primary_container">#B2DFDB</color>
+    <!-- Primary - Deep Teal -->
+    <color name="primary">#0D9488</color>
+    <color name="primary_variant">#0F766E</color>
+    <color name="primary_container">#CCFBF1</color>
     <color name="on_primary">#FFFFFF</color>
-    <color name="on_primary_container">#004D40</color>
+    <color name="on_primary_container">#134E4A</color>
 
-    <!-- Secondary Peach -->
-    <color name="secondary">#F4A261</color>
-    <color name="secondary_variant">#E07B39</color>
-    <color name="secondary_container">#FFE0C9</color>
+    <!-- Secondary - Warm Coral -->
+    <color name="secondary">#F97316</color>
+    <color name="secondary_variant">#EA580C</color>
+    <color name="secondary_container">#FED7AA</color>
     <color name="on_secondary">#FFFFFF</color>
-    <color name="on_secondary_container">#4A1E00</color>
+    <color name="on_secondary_container">#7C2D12</color>
 
-    <!-- Tertiary Lavender (for charts, accents) -->
-    <color name="tertiary">#9B8EC4</color>
-    <color name="tertiary_container">#E8DEFF</color>
+    <!-- Tertiary - Soft Indigo (for charts, accents) -->
+    <color name="tertiary">#6366F1</color>
+    <color name="tertiary_container">#E0E7FF</color>
 
     <!-- Status Colors -->
-    <color name="success">#4CAF50</color>
-    <color name="warning">#FFA726</color>
-    <color name="error">#EF5350</color>
-    <color name="info">#29B6F6</color>
+    <color name="success">#10B981</color>
+    <color name="success_container">#D1FAE5</color>
+    <color name="warning">#F59E0B</color>
+    <color name="warning_container">#FEF3C7</color>
+    <color name="error">#EF4444</color>
+    <color name="error_container">#FEE2E2</color>
+    <color name="info">#3B82F6</color>
+    <color name="info_container">#DBEAFE</color>
 
-    <!-- Surface & Background -->
-    <color name="background">#F8FAFB</color>
+    <!-- Surface & Background - Clean White with subtle warmth -->
+    <color name="background">#FAFAFA</color>
     <color name="surface">#FFFFFF</color>
-    <color name="surface_variant">#F0F4F5</color>
-    <color name="on_background">#1A1C1E</color>
-    <color name="on_surface">#1A1C1E</color>
-    <color name="on_surface_variant">#6B7280</color>
-    <color name="outline">#E0E5E9</color>
-    <color name="outline_variant">#C9D3D9</color>
+    <color name="surface_variant">#F4F4F5</color>
+    <color name="surface_elevated">#FFFFFF</color>
+    <color name="on_background">#18181B</color>
+    <color name="on_surface">#18181B</color>
+    <color name="on_surface_variant">#71717A</color>
+    <color name="outline">#E4E4E7</color>
+    <color name="outline_variant">#D4D4D8</color>
 
     <!-- Dark Theme Surfaces -->
-    <color name="background_dark">#0F1416</color>
-    <color name="surface_dark">#1A2126</color>
-    <color name="surface_variant_dark">#242E35</color>
-    <color name="on_background_dark">#E4E8EA</color>
-    <color name="on_surface_dark">#E4E8EA</color>
-    <color name="on_surface_variant_dark">#9BA8B0</color>
+    <color name="background_dark">#09090B</color>
+    <color name="surface_dark">#18181B</color>
+    <color name="surface_variant_dark">#27272A</color>
+    <color name="on_background_dark">#FAFAFA</color>
+    <color name="on_surface_dark">#FAFAFA</color>
+    <color name="on_surface_variant_dark">#A1A1AA</color>
+    <color name="outline_dark">#3F3F46</color>
 
-    <!-- Bottom Nav Colors (state list selector) -->
-    <color name="bottom_nav_active">#2A9D8F</color>
-    <color name="bottom_nav_inactive">#9BA8B0</color>
+    <!-- Bottom Nav Colors -->
+    <color name="bottom_nav_active">#0D9488</color>
+    <color name="bottom_nav_inactive">#A1A1AA</color>
 
     <!-- Card & Chip -->
     <color name="card_background">#FFFFFF</color>
-    <color name="chip_background">#EDF7F5</color>
+    <color name="chip_background">#F4F4F5</color>
+    <color name="chip_selected">#CCFBF1</color>
 
-    <!-- Chart Colors (for MPAndroidChart) -->
-    <color name="chart_height">#2A9D8F</color>
-    <color name="chart_weight">#F4A261</color>
-    <color name="chart_feedings">#9B8EC4</color>
-    <color name="chart_calories">#4CAF50</color>
-    <color name="chart_sleep">#29B6F6</color>
+    <!-- Chart Colors (MPAndroidChart) -->
+    <color name="chart_height">#0D9488</color>
+    <color name="chart_weight">#F97316</color>
+    <color name="chart_feedings">#8B5CF6</color>
+    <color name="chart_calories">#10B981</color>
+    <color name="chart_sleep">#3B82F6</color>
 
-    <!-- Progress Bar - Norm compliance -->
-    <color name="progress_good">#4CAF50</color>
-    <color name="progress_warning">#FFA726</color>
-    <color name="progress_danger">#EF5350</color>
+    <!-- Progress Bar -->
+    <color name="progress_good">#10B981</color>
+    <color name="progress_warning">#F59E0B</color>
+    <color name="progress_danger">#EF4444</color>
+
+    <!-- Icon tints -->
+    <color name="icon_primary">#0D9488</color>
+    <color name="icon_secondary">#71717A</color>
+    <color name="icon_on_surface">#3F3F46</color>
+
+    <!-- Gender colors -->
+    <color name="gender_male">#3B82F6</color>
+    <color name="gender_female">#EC4899</color>
 
 </resources>

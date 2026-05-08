@@ -18,16 +18,17 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingHorizontal="20dp"
-            android:paddingTop="16dp"
+            android:paddingTop="20dp"
             android:paddingBottom="12dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Трекер"
-                android:textSize="26sp"
+                android:text="@string/tracker"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                android:textColor="@color/on_background" />
+                android:textColor="@color/on_background"
+                android:letterSpacing="-0.02" />
 
             <TextView
                 android:id="@+id/tv_child_name"
@@ -35,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:textColor="@color/on_surface_variant"
-                android:layout_marginTop="2dp" />
+                android:layout_marginTop="4dp" />
 
         </LinearLayout>
 
@@ -53,12 +54,13 @@
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fab_add_entry"
+        style="@style/Widget.SabiCare.ExtendedFloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="24dp"
-        android:text="Өлшем қосу"
-        app:icon="@drawable/ic_add"
-        app:cornerRadius="16dp" />
+        android:layout_margin="20dp"
+        android:text="@string/add_measurement"
+        android:textAllCaps="false"
+        app:icon="@drawable/ic_add" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

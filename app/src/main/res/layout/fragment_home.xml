@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- ── Header: App name + greeting ── -->
+            <!-- Header: App name + greeting -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
                 android:gravity="center_vertical"
                 android:paddingHorizontal="20dp"
                 android:paddingTop="20dp"
-                android:paddingBottom="12dp">
+                android:paddingBottom="16dp">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -38,36 +38,42 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="SabiCare"
-                        android:textSize="26sp"
+                        android:textSize="24sp"
                         android:textStyle="bold"
-                        android:textColor="@color/primary" />
+                        android:textColor="@color/primary"
+                        android:letterSpacing="-0.02" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Сәлем! Бүгін қалай?"
+                        android:text="@string/greeting"
                         android:textSize="14sp"
-                        android:textColor="@color/on_surface_variant" />
+                        android:textColor="@color/on_surface_variant"
+                        android:layout_marginTop="2dp" />
 
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:gravity="center"
-                    android:text="👶"
-                    android:textSize="22sp"
-                    android:background="@drawable/bg_icon_circle" />
+                <!-- Profile avatar -->
+                <FrameLayout
+                    android:layout_width="44dp"
+                    android:layout_height="44dp">
+                    <ImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:src="@drawable/ic_baby"
+                        android:padding="10dp"
+                        android:background="@drawable/bg_icon_circle" />
+                </FrameLayout>
 
             </LinearLayout>
 
-            <!-- ── Active Child Card ── -->
+            <!-- Active Child Card -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="24dp"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="0dp"
                 app:cardBackgroundColor="@color/primary">
 
@@ -78,14 +84,21 @@
                     android:padding="20dp"
                     android:gravity="center_vertical">
 
-                    <!-- Avatar circle -->
-                    <TextView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:gravity="center"
-                        android:text="👶"
-                        android:textSize="30sp"
-                        android:background="@drawable/bg_circle_white_translucent" />
+                    <!-- Avatar circle with icon -->
+                    <FrameLayout
+                        android:layout_width="56dp"
+                        android:layout_height="56dp">
+                        <View
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:background="@drawable/bg_circle_white_translucent" />
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_baby"
+                            app:tint="@color/on_primary" />
+                    </FrameLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -98,16 +111,16 @@
                             android:id="@+id/tv_child_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="20sp"
+                            android:textSize="18sp"
                             android:textStyle="bold"
-                            android:textColor="@android:color/white" />
+                            android:textColor="@color/on_primary" />
 
                         <TextView
                             android:id="@+id/tv_child_age"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
-                            android:textColor="#CCFFFFFF"
+                            android:textColor="#B3FFFFFF"
                             android:layout_marginTop="2dp" />
 
                         <TextView
@@ -115,38 +128,60 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:textColor="#CCFFFFFF"
+                            android:textColor="#B3FFFFFF"
                             android:layout_marginTop="2dp" />
 
                     </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right"
+                        app:tint="#B3FFFFFF" />
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- ── Reminders Section ── -->
+            <!-- Reminders Section -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:paddingHorizontal="20dp"
-                android:layout_marginBottom="8dp">
+                android:layout_marginBottom="12dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🔔 Еске салушылар"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/on_background" />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_bell"
+                    app:tint="@color/primary"
+                    android:layout_marginEnd="8dp" />
 
-                <TextView
-                    android:id="@+id/tv_reminders_subtitle"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:textSize="13sp"
-                    android:textColor="@color/on_surface_variant"
-                    android:layout_marginTop="2dp" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/reminders"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/on_background" />
+
+                    <TextView
+                        android:id="@+id/tv_reminders_subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="@color/on_surface_variant"
+                        android:layout_marginTop="1dp" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -156,19 +191,34 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="16dp"
                 android:clipToPadding="false"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="28dp"
                 android:nestedScrollingEnabled="false" />
 
-            <!-- ── Articles Section ── -->
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Articles Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="📚 Пайдалы мақалалар"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/on_background"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:paddingHorizontal="20dp"
-                android:layout_marginBottom="12dp" />
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_article"
+                    app:tint="@color/primary"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/useful_articles"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/on_background" />
+
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_articles"
@@ -177,18 +227,33 @@
                 android:paddingHorizontal="16dp"
                 android:paddingEnd="16dp"
                 android:clipToPadding="false"
-                android:layout_marginBottom="24dp" />
+                android:layout_marginBottom="28dp" />
 
-            <!-- ── Medications Section ── -->
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Medications Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="💊 Витаминдер мен препараттар"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/on_background"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
                 android:paddingHorizontal="20dp"
-                android:layout_marginBottom="12dp" />
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_vitamin"
+                    app:tint="@color/primary"
+                    android:layout_marginEnd="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/vitamins_and_medications"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/on_background" />
+
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_medications"

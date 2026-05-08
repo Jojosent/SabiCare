@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- SabiCare Modern Minimalist Theme                                -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+
     <style name="Theme.SabiCare" parent="Theme.Material3.DayNight.NoActionBar">
 
         <item name="colorPrimary">@color/primary</item>
@@ -29,6 +33,7 @@
         <item name="colorOutline">@color/outline</item>
 
         <item name="textAppearanceDisplayLarge">@style/TextAppearance.SabiCare.DisplayLarge</item>
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.SabiCare.HeadlineLarge</item>
         <item name="textAppearanceTitleLarge">@style/TextAppearance.SabiCare.TitleLarge</item>
         <item name="textAppearanceTitleMedium">@style/TextAppearance.SabiCare.TitleMedium</item>
         <item name="textAppearanceBodyLarge">@style/TextAppearance.SabiCare.BodyLarge</item>
@@ -44,12 +49,13 @@
         <item name="android:windowLightStatusBar">true</item>
 
     </style>
+
     <style name="Theme.SabiCare.Splash" parent="Theme.SabiCare.NoActionBar">
         <item name="android:windowBackground">@color/primary</item>
         <item name="android:statusBarColor">@color/primary</item>
         <item name="android:navigationBarColor">@color/primary</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
-
 
     <style name="Theme.SabiCare.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -61,14 +67,26 @@
         <item name="android:windowLightStatusBar">false</item>
     </style>
 
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- Typography - Clean Sans Serif                                   -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+
     <style name="TextAppearance.SabiCare.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
         <item name="fontFamily">@font/rubik_bold</item>
-        <item name="android:textSize">36sp</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="TextAppearance.SabiCare.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="fontFamily">@font/rubik_semibold</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:letterSpacing">-0.01</item>
     </style>
 
     <style name="TextAppearance.SabiCare.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
         <item name="fontFamily">@font/rubik_semibold</item>
-        <item name="android:textSize">22sp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">0</item>
     </style>
 
     <style name="TextAppearance.SabiCare.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
@@ -79,17 +97,30 @@
     <style name="TextAppearance.SabiCare.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
         <item name="fontFamily">@font/rubik_regular</item>
         <item name="android:textSize">16sp</item>
+        <item name="android:lineHeight">24sp</item>
     </style>
 
     <style name="TextAppearance.SabiCare.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
         <item name="fontFamily">@font/rubik_regular</item>
         <item name="android:textSize">14sp</item>
+        <item name="android:lineHeight">20sp</item>
     </style>
 
     <style name="TextAppearance.SabiCare.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
         <item name="fontFamily">@font/rubik_medium</item>
         <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.02</item>
     </style>
+
+    <style name="TextAppearance.SabiCare.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
+        <item name="fontFamily">@font/rubik_medium</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- Shape Appearances - Softer Corners                              -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
 
     <style name="ShapeAppearance.SabiCare.Small" parent="ShapeAppearance.Material3.SmallComponent">
         <item name="cornerFamily">rounded</item>
@@ -103,20 +134,50 @@
 
     <style name="ShapeAppearance.SabiCare.Large" parent="ShapeAppearance.Material3.LargeComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">24dp</item>
+        <item name="cornerSize">20dp</item>
     </style>
 
+    <style name="ShapeAppearance.SabiCare.ExtraLarge" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">28dp</item>
+    </style>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- Widget Styles - Minimalist Components                           -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+
     <style name="Widget.SabiCare.Card" parent="Widget.Material3.CardView.Elevated">
-        <item name="cardCornerRadius">20dp</item>
+        <item name="cardCornerRadius">16dp</item>
         <item name="cardElevation">0dp</item>
         <item name="strokeWidth">1dp</item>
         <item name="strokeColor">@color/outline</item>
+        <item name="cardBackgroundColor">@color/surface</item>
+    </style>
+
+    <style name="Widget.SabiCare.Card.Elevated" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="cardBackgroundColor">@color/surface</item>
+    </style>
+
+    <style name="Widget.SabiCare.Card.Filled" parent="Widget.Material3.CardView.Filled">
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="cardBackgroundColor">@color/primary_container</item>
     </style>
 
     <style name="Widget.SabiCare.Button.Primary" parent="Widget.Material3.Button">
         <item name="android:paddingTop">14dp</item>
         <item name="android:paddingBottom">14dp</item>
-        <item name="cornerRadius">16dp</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.SabiCare.LabelLarge</item>
+    </style>
+
+    <style name="Widget.SabiCare.Button.Secondary" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="strokeColor">@color/outline</item>
         <item name="android:textAppearance">@style/TextAppearance.SabiCare.LabelLarge</item>
     </style>
 
@@ -127,25 +188,44 @@
         <item name="shapeAppearance">@style/ShapeAppearance.SabiCare.Medium</item>
     </style>
 
+    <style name="Widget.SabiCare.ExtendedFloatingActionButton" parent="Widget.Material3.ExtendedFloatingActionButton.Primary">
+        <item name="backgroundTint">@color/primary</item>
+        <item name="iconTint">@color/on_primary</item>
+        <item name="cornerRadius">16dp</item>
+    </style>
+
     <style name="Widget.SabiCare.BottomNavigationView" parent="Widget.Material3.BottomNavigationView">
         <item name="itemIconTint">@color/bottom_nav_icon_color</item>
         <item name="itemTextColor">@color/bottom_nav_icon_color</item>
         <item name="labelVisibilityMode">labeled</item>
         <item name="itemRippleColor">@color/primary_container</item>
+        <item name="android:background">@color/surface</item>
     </style>
 
     <style name="Widget.SabiCare.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
-        <item name="boxCornerRadiusTopStart">16dp</item>
-        <item name="boxCornerRadiusTopEnd">16dp</item>
-        <item name="boxCornerRadiusBottomStart">16dp</item>
-        <item name="boxCornerRadiusBottomEnd">16dp</item>
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
         <item name="boxStrokeColor">@color/outline</item>
         <item name="hintTextColor">@color/on_surface_variant</item>
+    </style>
+
+    <style name="Widget.SabiCare.Chip" parent="Widget.Material3.Chip.Filter">
+        <item name="chipCornerRadius">12dp</item>
+        <item name="chipBackgroundColor">@color/chip_background</item>
+        <item name="checkedIconVisible">false</item>
     </style>
 
     <style name="CircleImageView" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Icon Container Style -->
+    <style name="Widget.SabiCare.IconContainer">
+        <item name="android:background">@drawable/bg_icon_circle</item>
+        <item name="android:padding">10dp</item>
     </style>
 
 </resources>
