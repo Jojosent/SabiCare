@@ -13,9 +13,12 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.example.sabicare_j.R
+import com.example.sabicare_j.SabiCareApplication
 import com.example.sabicare_j.databinding.FragmentSettingsBinding
+import com.example.sabicare_j.ui.auth.LoginActivity
 import com.example.sabicare_j.ui.main.MainActivity
 import com.example.sabicare_j.ui.shared.ChildViewModel
 import com.example.sabicare_j.utils.LocaleHelper
@@ -24,6 +27,7 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.launch
 
 class SettingsFragment : Fragment() {
 
@@ -32,7 +36,6 @@ class SettingsFragment : Fragment() {
     private val childViewModel: ChildViewModel by activityViewModels()
     private val auth = FirebaseAuth.getInstance()
 
-    // ── Avatar picker ──────────────────────────────────────────────────────
     private val pickImageLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
@@ -52,7 +55,6 @@ class SettingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         loadCurrentValues()
         setupAvatarSection()
         setupAccountSection()
@@ -63,29 +65,23 @@ class SettingsFragment : Fragment() {
         setupSignOut()
     }
 
-    // ── Load saved prefs ───────────────────────────────────────────────────
     private fun loadCurrentValues() {
         val prefs = requireContext().getSharedPreferences("sabicare_prefs_simple", Context.MODE_PRIVATE)
-
-        // Avatar
         val avatarUri = prefs.getString("user_avatar_uri", null)
         loadAvatar(avatarUri)
 
-        // Display name / email
         val user = auth.currentUser
         binding.tvUserEmail.text = user?.email ?: prefs.getString("user_email", "—")
         binding.tvUserName.text = user?.displayName
             ?: prefs.getString("user_display_name", "Пайдаланушы")
 
-        // Theme
         val theme = prefs.getString("theme", "system") ?: "system"
         binding.tvCurrentTheme.text = when (theme) {
             "light" -> "Жарық"
-            "dark" -> "Қараңғы"
-            else -> "Жүйелік"
+            "dark"  -> "Қараңғы"
+            else    -> "Жүйелік"
         }
 
-        // Language
         val lang = prefs.getString("language", "ru") ?: "ru"
         binding.tvCurrentLanguage.text = when (lang) {
             "kk" -> "Қазақша"
@@ -93,13 +89,11 @@ class SettingsFragment : Fragment() {
             else -> "Русский"
         }
 
-        // Notifications
         binding.switchNotifications.isChecked = prefs.getBoolean("notifications_enabled", true)
         binding.switchReminderNotif.isChecked = prefs.getBoolean("reminder_notif_enabled", true)
         binding.switchGrowthAlerts.isChecked = prefs.getBoolean("growth_alerts_enabled", true)
     }
 
-    // ── Avatar ─────────────────────────────────────────────────────────────
     private fun setupAvatarSection() {
         binding.ivUserAvatar.setOnClickListener { pickAvatar() }
         binding.btnChangeAvatar.setOnClickListener { pickAvatar() }
@@ -113,10 +107,11 @@ class SettingsFragment : Fragment() {
     }
 
     private fun saveAvatarUri(uri: Uri) {
-        // Persist read permission across reboots
-        requireContext().contentResolver.takePersistableUriPermission(
-            uri, Intent.FLAG_GRANT_READ_URI_PERMISSION
-        )
+        try {
+            requireContext().contentResolver.takePersistableUriPermission(
+                uri, Intent.FLAG_GRANT_READ_URI_PERMISSION
+            )
+        } catch (_: Exception) {}
         requireContext().getSharedPreferences("sabicare_prefs_simple", Context.MODE_PRIVATE).edit {
             putString("user_avatar_uri", uri.toString())
         }
@@ -134,7 +129,6 @@ class SettingsFragment : Fragment() {
         }
     }
 
-    // ── Account ────────────────────────────────────────────────────────────
     private fun setupAccountSection() {
         binding.itemChangeName.setOnClickListener { showChangeNameDialog() }
         binding.itemChangeEmail.setOnClickListener { showChangeEmailDialog() }
@@ -252,7 +246,6 @@ class SettingsFragment : Fragment() {
             .show()
     }
 
-    // ── Appearance ─────────────────────────────────────────────────────────
     private fun setupAppearanceSection() {
         setupThemeSelector()
         setupLanguageSelector()
@@ -271,8 +264,8 @@ class SettingsFragment : Fragment() {
                         .edit { putString("theme", selectedTheme) }
                     val mode = when (selectedTheme) {
                         "light" -> AppCompatDelegate.MODE_NIGHT_NO
-                        "dark" -> AppCompatDelegate.MODE_NIGHT_YES
-                        else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+                        "dark"  -> AppCompatDelegate.MODE_NIGHT_YES
+                        else    -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
                     }
                     AppCompatDelegate.setDefaultNightMode(mode)
                     binding.tvCurrentTheme.text = themes[which].drop(3)
@@ -300,13 +293,10 @@ class SettingsFragment : Fragment() {
         }
     }
 
-    // ── Notifications ──────────────────────────────────────────────────────
     private fun setupNotificationsSection() {
         val prefs = requireContext().getSharedPreferences("sabicare_prefs_simple", Context.MODE_PRIVATE)
-
         binding.switchNotifications.setOnCheckedChangeListener { _, checked ->
             prefs.edit { putBoolean("notifications_enabled", checked) }
-            // Cascade — disable sub-switches visually when master is off
             binding.switchReminderNotif.isEnabled = checked
             binding.switchGrowthAlerts.isEnabled = checked
         }
@@ -318,21 +308,29 @@ class SettingsFragment : Fragment() {
         }
     }
 
-    // ── Privacy / Security ─────────────────────────────────────────────────
     private fun setupPrivacySection() {
         binding.itemDeleteAccount.setOnClickListener {
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle("Аккаунтты жою")
                 .setMessage("Барлық деректер, оның ішінде балалар профилі мен өлшемдер жойылады. Бұл іс-әрекетті қайтару мүмкін емес.")
                 .setPositiveButton("Жою") { _, _ ->
-                    auth.currentUser?.delete()
-                        ?.addOnSuccessListener {
-                            Toast.makeText(requireContext(), "Аккаунт жойылды", Toast.LENGTH_SHORT).show()
-                            // Navigate to onboarding / login
-                        }
-                        ?.addOnFailureListener { e ->
-                            Toast.makeText(requireContext(), "Алдымен қайта кіріңіз: ${e.message}", Toast.LENGTH_LONG).show()
-                        }
+                    lifecycleScope.launch {
+                        try {
+                            (requireActivity().application as SabiCareApplication).clearAllLocalData()
+                        } catch (_: Exception) {}
+                        auth.currentUser?.delete()
+                            ?.addOnSuccessListener {
+                                auth.signOut()
+                                val intent = Intent(requireContext(), LoginActivity::class.java).apply {
+                                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                }
+                                startActivity(intent)
+                                requireActivity().finish()
+                            }
+                            ?.addOnFailureListener { e ->
+                                Toast.makeText(requireContext(), "Алдымен қайта кіріңіз: ${e.message}", Toast.LENGTH_LONG).show()
+                            }
+                    }
                 }
                 .setNegativeButton("Бас тарту", null)
                 .show()
@@ -344,7 +342,6 @@ class SettingsFragment : Fragment() {
         }
     }
 
-    // ── Support ────────────────────────────────────────────────────────────
     private fun setupSupportSection() {
         binding.itemAbout.setOnClickListener {
             MaterialAlertDialogBuilder(requireContext())
@@ -373,18 +370,29 @@ class SettingsFragment : Fragment() {
         }
     }
 
-    // ── Sign out ───────────────────────────────────────────────────────────
+    // ── REAL SIGN OUT ──────────────────────────────────────────────────────
     private fun setupSignOut() {
         binding.btnSignOut.setOnClickListener {
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle("Шығу")
                 .setMessage("Есептік жазбадан шығасыз ба?")
                 .setPositiveButton("Шығу") { _, _ ->
-                    auth.signOut()
-                    val intent = Intent(requireContext(), MainActivity::class.java).apply {
-                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    lifecycleScope.launch {
+                        try {
+                            // 1. Wipe all local Room data
+                            (requireActivity().application as SabiCareApplication).clearAllLocalData()
+                        } catch (_: Exception) {}
+                        // 2. Sign out from Firebase
+                        auth.signOut()
+                        // 3. Navigate to Login, clear entire back stack
+                        val intent = Intent(requireContext(), LoginActivity::class.java).apply {
+                            flags = Intent.FLAG_ACTIVITY_NEW_TASK or
+                                    Intent.FLAG_ACTIVITY_CLEAR_TASK or
+                                    Intent.FLAG_ACTIVITY_CLEAR_TOP
+                        }
+                        startActivity(intent)
+                        requireActivity().finish()
                     }
-                    startActivity(intent)
                 }
                 .setNegativeButton("Бас тарту", null)
                 .show()

@@ -49,4 +49,9 @@ class MeasurementRepository(private val measurementDao: MeasurementDao) {
         val diff = nextDue - System.currentTimeMillis()
         return (diff / (24L * 60 * 60 * 1000)).toInt()
     }
+
+    // Clears all local measurements on logout / user switch
+    suspend fun clearLocalData() {
+        measurementDao.deleteAllMeasurements()
+    }
 }

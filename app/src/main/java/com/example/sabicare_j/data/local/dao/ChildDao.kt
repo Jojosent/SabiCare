@@ -16,6 +16,9 @@ interface ChildDao {
     @Delete
     suspend fun deleteChild(child: ChildEntity)
 
+    @Query("DELETE FROM children")
+    suspend fun deleteAllChildren()
+
     @Query("UPDATE children SET is_active = 0")
     suspend fun deactivateAllChildren()
 

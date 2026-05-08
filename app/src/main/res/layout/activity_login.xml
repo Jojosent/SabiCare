@@ -18,11 +18,16 @@
         android:gravity="center"
         android:padding="32dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="👶"
-            android:textSize="64sp" />
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo"
+            android:contentDescription="App logo"
+            app:layout_constraintBottom_toTopOf="@id/tvAppName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="16dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -77,7 +82,7 @@
                     android:text="Кіру"
                     android:textSize="14sp"
                     android:background="@drawable/bg_tab_selected"
-                    android:textColor="@color/primary" />
+                    android:textColor="@color/on_primary" />
 
                 <Button
                     android:id="@+id/tabRegister"

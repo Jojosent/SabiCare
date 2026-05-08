@@ -19,6 +19,9 @@ interface MeasurementDao {
     @Query("DELETE FROM measurements WHERE child_id = :childId")
     suspend fun deleteAllForChild(childId: Long)
 
+    @Query("DELETE FROM measurements")
+    suspend fun deleteAllMeasurements()
+
     @Query("SELECT * FROM measurements WHERE child_id = :childId ORDER BY recorded_at DESC")
     fun getAllForChildLive(childId: Long): LiveData<List<MeasurementEntity>>
 

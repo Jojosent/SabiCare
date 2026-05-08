@@ -49,14 +49,16 @@
                             app:tint="@color/primary" />
 
                         <!-- Баланың фотосы -->
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/ivChildPhoto"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:layout_marginHorizontal="8dp"
+                        <ImageView
+                            android:id="@+id/ivChildAvatar"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:src="@drawable/ic_child_placeholder"
                             android:scaleType="centerCrop"
-                            app:shapeAppearanceOverlay="@style/CircleImageView"
-                            android:background="@color/primary_container" />
+                            android:background="@drawable/circle_avatar_bg"
+                            android:clipToOutline="true"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="8dp" />
 
                         <LinearLayout
                             android:layout_width="0dp"
