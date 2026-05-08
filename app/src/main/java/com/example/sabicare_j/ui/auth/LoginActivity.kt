@@ -5,11 +5,14 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.example.sabicare_j.SabiCareApplication
 import com.example.sabicare_j.databinding.ActivityLoginBinding
 import com.example.sabicare_j.ui.main.MainActivity
 import com.example.sabicare_j.ui.onboarding.OnboardingActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
 
@@ -25,7 +28,6 @@ class LoginActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
 
-        // Егер пайдаланушы кірген болса — тікелей MainActivity-ге
         if (auth.currentUser != null) {
             goToMain()
             return
@@ -65,9 +67,24 @@ class LoginActivity : AppCompatActivity() {
             binding.btnLogin.isEnabled = false
 
             auth.signInWithEmailAndPassword(email, password)
-                .addOnSuccessListener {
-                    binding.progressBar.visibility = View.GONE
-                    goToMain()
+                .addOnSuccessListener { result ->
+                    val newUid = result.user?.uid ?: ""
+                    val prefs = getSharedPreferences("sabicare_prefs_simple", MODE_PRIVATE)
+                    val lastUid = prefs.getString("last_logged_uid", "")
+
+                    if (lastUid != newUid) {
+                        // Different user logged in — wipe the previous user's local data
+                        lifecycleScope.launch {
+                            (application as SabiCareApplication).clearAllLocalData()
+                            prefs.edit().putString("last_logged_uid", newUid).apply()
+                            binding.progressBar.visibility = View.GONE
+                            goToMain()
+                        }
+                    } else {
+                        prefs.edit().putString("last_logged_uid", newUid).apply()
+                        binding.progressBar.visibility = View.GONE
+                        goToMain()
+                    }
                 }
                 .addOnFailureListener { e ->
                     binding.progressBar.visibility = View.GONE
@@ -103,7 +120,6 @@ class LoginActivity : AppCompatActivity() {
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnSuccessListener { result ->
                     val uid = result.user!!.uid
-                    // Firestore-ға пайдаланушы деректерін сақтау
                     val userData = hashMapOf(
                         "name" to name,
                         "email" to email,
@@ -112,10 +128,24 @@ class LoginActivity : AppCompatActivity() {
                     db.collection("users").document(uid)
                         .set(userData)
                         .addOnSuccessListener {
+                            // Save UID and clear any old local data
+                            lifecycleScope.launch {
+                                (application as SabiCareApplication).clearAllLocalData()
+                                getSharedPreferences("sabicare_prefs_simple", MODE_PRIVATE)
+                                    .edit()
+                                    .putString("last_logged_uid", uid)
+                                    .putString("user_display_name", name)
+                                    .putString("user_email", email)
+                                    .apply()
+                                binding.progressBar.visibility = View.GONE
+                                startActivity(Intent(this@LoginActivity, OnboardingActivity::class.java))
+                                finish()
+                            }
+                        }
+                        .addOnFailureListener { e ->
                             binding.progressBar.visibility = View.GONE
-                            // Алғаш рет кіргенде онбординг
-                            startActivity(Intent(this, OnboardingActivity::class.java))
-                            finish()
+                            binding.btnRegister.isEnabled = true
+                            Toast.makeText(this, "Қате: ${e.localizedMessage}", Toast.LENGTH_LONG).show()
                         }
                 }
                 .addOnFailureListener { e ->

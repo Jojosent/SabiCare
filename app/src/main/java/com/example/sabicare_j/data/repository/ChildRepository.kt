@@ -23,7 +23,6 @@ class ChildRepository(
 
     suspend fun addChild(child: ChildEntity): Long {
         val id = childDao.insertChild(child)
-        // Firebase-ке сақтау (фоңда, қате болса Room-да сақталады)
         CoroutineScope(Dispatchers.IO).launch {
             try { firestoreRepo.saveChild(child.copy(id = id)) } catch (_: Exception) {}
         }
@@ -45,4 +44,9 @@ class ChildRepository(
     }
 
     suspend fun switchActiveChild(childId: Long) = childDao.switchActiveChild(childId)
+
+    // Clears all local children data on logout / user switch
+    suspend fun clearLocalData() {
+        childDao.deleteAllChildren()
+    }
 }

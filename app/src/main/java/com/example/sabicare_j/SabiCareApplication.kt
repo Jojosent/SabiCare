@@ -22,7 +22,6 @@ class SabiCareApplication : Application() {
     }
 
     override fun attachBaseContext(base: Context) {
-        // default тіл "kk" (қазақша)
         val lang = LocaleHelper.getSavedLocale(base) ?: "kk"
         super.attachBaseContext(LocaleHelper.applyLocale(base, lang))
     }
@@ -32,9 +31,21 @@ class SabiCareApplication : Application() {
         val theme = prefs.getString("theme", "system") ?: "system"
         val mode = when (theme) {
             "light" -> AppCompatDelegate.MODE_NIGHT_NO
-            "dark" -> AppCompatDelegate.MODE_NIGHT_YES
-            else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+            "dark"  -> AppCompatDelegate.MODE_NIGHT_YES
+            else    -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
         }
         AppCompatDelegate.setDefaultNightMode(mode)
+    }
+
+    // Called on logout and on new-user login to wipe the previous user's local data
+    suspend fun clearAllLocalData() {
+        childRepository.clearLocalData()
+        measurementRepository.clearLocalData()
+        getSharedPreferences("sabicare_prefs_simple", MODE_PRIVATE)
+            .edit()
+            .remove("user_avatar_uri")
+            .remove("user_display_name")
+            .remove("user_email")
+            .apply()
     }
 }
