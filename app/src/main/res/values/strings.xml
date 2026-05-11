@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">SabiCare</string>
+    <string name="app_tagline">Ваш помощник в уходе за малышом</string>
+
+    <!-- Auth -->
+    <string name="login">Войти</string>
+    <string name="register">Регистрация</string>
+    <string name="password">Пароль</string>
+    <string name="confirm_password">Подтвердите пароль</string>
+    <string name="your_name">Ваше имя</string>
 
     <!-- Bottom Navigation -->
     <string name="nav_home">Главная</string>
     <string name="nav_tracker">Трекер</string>
     <string name="nav_results">Результаты</string>
     <string name="nav_profile">Профиль</string>
+
+    <!-- Screen Titles -->
+    <string name="profile">Профиль</string>
+    <string name="results">Результаты</string>
+    <string name="tracker">Трекер</string>
+    <string name="logout">Выйти</string>
 
     <!-- Actions -->
     <string name="add_entry">Добавить запись</string>
@@ -30,6 +44,17 @@
     <string name="child_age_months">%d месяцев</string>
 
     <!-- Measurement Types -->
+    <string name="add_measurement">Добавить замер</string>
+    <string name="measurement_type">Тип замера</string>
+    <string name="height">Рост</string>
+    <string name="weight">Вес</string>
+    <string name="feeding">Кормление</string>
+    <string name="calories">Калории</string>
+    <string name="sleep">Сон</string>
+    <string name="value">Значение</string>
+    <string name="date">Дата</string>
+    <string name="note_optional">Заметка (необязательно)</string>
+
     <string name="type_height">Рост</string>
     <string name="type_weight">Вес</string>
     <string name="type_feedings_count">Кормлений в день</string>
@@ -64,6 +89,11 @@
     <string name="reminders_title">Напоминания</string>
     <string name="articles_title">Полезные статьи</string>
     <string name="medications_title">Витамины и препараты</string>
+    <string name="greeting">Сәлем! Балаңыздың жағдайын бақылаңыз 👶</string>
+    <string name="reminders">Еске салулар</string>
+    <string name="reminders_subtitle">Бүгінгі маңызды істер</string>
+    <string name="useful_articles">Пайдалы мақалалар</string>
+    <string name="vitamins_and_medications">Дәрумендер және дәрілер</string>
 
     <!-- Profile -->
     <string name="my_children">Мои дети</string>
@@ -80,6 +110,7 @@
     <string name="onboarding_title">Добро пожаловать в SabiCare</string>
     <string name="onboarding_subtitle">Добавьте профиль вашего малыша, чтобы начать</string>
     <string name="onboarding_add_baby">Добавить малыша</string>
+    <string name="onboarding_start">Бастау</string>
 
     <!-- Errors / Empty states -->
     <string name="error_name_required">Введите имя ребёнка</string>
@@ -89,6 +120,5 @@
     <string name="error_invalid_value">Некорректное значение</string>
 
     <string name="edit_child">Балаңызды өңдеу</string>
-    <string name="onboarding_start">Бастау</string>
 
 </resources>

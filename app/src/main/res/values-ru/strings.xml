@@ -7,9 +7,16 @@
     <string name="nav_tracker">Трекер</string>
     <string name="nav_results">Результаты</string>
     <string name="nav_profile">Профиль</string>
-
     <string name="about">О приложении</string>
-    <!-- Actions -->
+    <string name="greeting">Сәлем! Балаңыздың жағдайын бақылаңыз 👶</string>
+
+    <string name="reminders">Еске салулар</string>
+
+    <string name="reminders_subtitle">Бүгінгі маңызды істер</string>
+
+    <string name="useful_articles">Пайдалы мақалалар</string>
+
+    <string name="vitamins_and_medications">Дәрумендер және дәрілер</string>
     <string name="add_entry">Добавить запись</string>
     <string name="add_child">Добавить ребёнка</string>
     <string name="settings">Настройки</string>

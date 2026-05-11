@@ -25,13 +25,12 @@
                 android:layout_width="44dp"
                 android:layout_height="44dp"
                 android:background="@drawable/bg_circle_white_translucent" />
-            <ImageView
-                android:id="@+id/iv_icon"
-                android:layout_width="22dp"
-                android:layout_height="22dp"
+            <TextView
+                android:id="@+id/tv_emoji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_vitamin"
-                app:tint="@color/on_primary_container" />
+                android:textSize="20sp" />
         </FrameLayout>
 
         <TextView

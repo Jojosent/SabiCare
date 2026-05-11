@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Child selector card — PROFILE HEADER-ды осымен алмастырыңыз -->
+            <!-- Child selector card -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -34,7 +34,6 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <!-- Баланы ауыстыру: ← Айя  [•  ○] → -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -49,7 +48,7 @@
                             android:background="?attr/selectableItemBackgroundBorderless"
                             app:tint="@color/primary" />
 
-                        <!-- Баланың фотосы -->
+                        <!-- Child Photo -->
                         <ImageView
                             android:id="@+id/ivChildAvatar"
                             android:layout_width="72dp"
@@ -85,7 +84,7 @@
                                 android:textSize="13sp"
                                 android:textColor="@color/on_surface_variant" />
 
-                            <!-- Нүкте индикаторлары -->
+                            <!-- Dots -->
                             <LinearLayout
                                 android:id="@+id/layoutDots"
                                 android:layout_width="wrap_content"
@@ -104,7 +103,6 @@
 
                     </LinearLayout>
 
-                    <!-- Add child button -->
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnAddChild"
                         style="@style/Widget.Material3.Button.OutlinedButton"
@@ -116,31 +114,36 @@
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingHorizontal="20dp"
-            android:paddingTop="20dp"
-            android:paddingBottom="24dp">
 
-            <TextView
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/profile"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_marginTop="30dp"
-                android:textColor="@color/on_background"
-                android:letterSpacing="-0.02" />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="24dp">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_settings"
-                style="@style/Widget.Material3.Button.IconButton"
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-                app:icon="@drawable/ic_settings"
-                app:iconTint="@color/on_surface_variant" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/profile"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/on_background"
+                    android:letterSpacing="-0.02" />
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/itemSettings"
+                    style="@style/Widget.Material3.Button.IconButton"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    app:icon="@drawable/ic_settings"
+                    app:iconTint="@color/on_surface_variant" />
+
+            </LinearLayout>
         </LinearLayout>
 
         <!-- User info card -->
@@ -252,7 +255,7 @@
 
         <!-- Add child button -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_add_child"
+            android:id="@+id/fabAddChild"
             style="@style/Widget.SabiCare.Button.Secondary"
             android:layout_width="match_parent"
             android:layout_height="52dp"
@@ -266,7 +269,7 @@
 
         <!-- Logout button -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_logout"
+            android:id="@+id/btnSignOut"
             style="@style/Widget.Material3.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

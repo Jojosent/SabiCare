@@ -38,11 +38,25 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkFirstLaunch() {
         val repo = (application as SabiCareApplication).childRepository
+        val prefs = getSharedPreferences("sabicare_prefs_simple", MODE_PRIVATE)
+
         lifecycleScope.launch {
-            if (repo.getChildCount() == 0) {
-                startActivity(Intent(this@MainActivity, OnboardingActivity::class.java))
-                finish()
+            val childCount = repo.getChildCount()
+            val isFirstLaunch = prefs.getBoolean("first_launch_complete", false)
+
+            // Only show onboarding on true first launch
+            if (!isFirstLaunch) {
+                // Mark first launch as complete
+                prefs.edit().putBoolean("first_launch_complete", true).apply()
+
+                // Only go to onboarding if no children exist
+                if (childCount == 0) {
+                    startActivity(Intent(this@MainActivity, OnboardingActivity::class.java))
+                    finish()
+                }
             }
+            // If first launch is complete and child count > 0, continue normally
+            // If first launch is complete but childCount == 0, user skipped onboarding - let them add later
         }
     }
 

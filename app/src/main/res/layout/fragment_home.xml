@@ -68,12 +68,13 @@
             </LinearLayout>
 
             <!-- Active Child Card -->
+            <!-- ── Active Child Card ── -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
-                android:layout_marginBottom="24dp"
-                app:cardCornerRadius="20dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="24dp"
                 app:cardElevation="0dp"
                 app:cardBackgroundColor="@color/primary">
 
@@ -84,21 +85,25 @@
                     android:padding="20dp"
                     android:gravity="center_vertical">
 
-                    <!-- Avatar circle with icon -->
-                    <FrameLayout
-                        android:layout_width="56dp"
-                        android:layout_height="56dp">
-                        <View
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:background="@drawable/bg_circle_white_translucent" />
-                        <ImageView
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ic_baby"
-                            app:tint="@color/on_primary" />
-                    </FrameLayout>
+                    <!-- Photo Avatar Circle -->
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/iv_avatar_photo"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_child_placeholder"
+                        android:scaleType="centerCrop"
+                        android:visibility="gone"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+
+                    <!-- Emoji Avatar (Fallback) -->
+                    <TextView
+                        android:id="@+id/tv_avatar"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:gravity="center"
+                        android:text="👶"
+                        android:textSize="30sp"
+                        android:background="@drawable/bg_circle_white_translucent" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -111,16 +116,16 @@
                             android:id="@+id/tv_child_name"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="18sp"
+                            android:textSize="20sp"
                             android:textStyle="bold"
-                            android:textColor="@color/on_primary" />
+                            android:textColor="@android:color/white" />
 
                         <TextView
                             android:id="@+id/tv_child_age"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
-                            android:textColor="#B3FFFFFF"
+                            android:textColor="#CCFFFFFF"
                             android:layout_marginTop="2dp" />
 
                         <TextView
@@ -128,16 +133,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="12sp"
-                            android:textColor="#B3FFFFFF"
+                            android:textColor="#CCFFFFFF"
                             android:layout_marginTop="2dp" />
 
                     </LinearLayout>
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/ic_chevron_right"
-                        app:tint="#B3FFFFFF" />
 
                 </LinearLayout>
 

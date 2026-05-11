@@ -1,5 +1,6 @@
 package com.example.sabicare_j.ui.home
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -80,6 +81,27 @@ class HomeFragment : Fragment() {
                 binding.tvChildAge.text = homeViewModel.getAgeString(child.birthDate)
                 binding.tvGenderBadge.text =
                     if (child.gender == "MALE") "👦 Ұл бала" else "👧 Қыз бала"
+
+                // Load and display child photo
+                if (!child.photoUri.isNullOrEmpty()) {
+                    try {
+                        binding.tvAvatar.text = ""  // Clear emoji if photo exists
+                        binding.ivAvatarPhoto.visibility = View.VISIBLE
+                        binding.ivAvatarPhoto.setImageURI(Uri.parse(child.photoUri))
+                        binding.tvAvatar.visibility = View.GONE
+                    } catch (e: Exception) {
+                        // Fallback to emoji if photo fails
+                        binding.tvAvatar.text = "👶"
+                        binding.tvAvatar.visibility = View.VISIBLE
+                        binding.ivAvatarPhoto.visibility = View.GONE
+                    }
+                } else {
+                    // No photo, show emoji
+                    binding.tvAvatar.text = "👶"
+                    binding.tvAvatar.visibility = View.VISIBLE
+                    binding.ivAvatarPhoto.visibility = View.GONE
+                }
+
                 homeViewModel.loadRemindersForChild(child.id)
             }
         }
