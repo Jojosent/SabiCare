@@ -1,5 +1,6 @@
 package com.example.sabicare_j.ui.profile
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -42,6 +43,18 @@ class ChildrenAdapter(
             binding.tvChildName.text = child.name
             binding.tvChildAge.text = getAgeString(child.birthDate)
             binding.tvGender.text = if (child.gender == "MALE") "👦 Ұл" else "👧 Қыз"
+
+            // Load photo if exists, otherwise show placeholder
+            if (!child.photoUri.isNullOrEmpty()) {
+                try {
+                    binding.ivAvatar.setImageURI(Uri.parse(child.photoUri))
+                } catch (e: Exception) {
+                    // If photo doesn't exist or can't be loaded, use placeholder
+                    binding.ivAvatar.setImageResource(com.example.sabicare_j.R.drawable.ic_child_placeholder)
+                }
+            } else {
+                binding.ivAvatar.setImageResource(com.example.sabicare_j.R.drawable.ic_child_placeholder)
+            }
 
             // Highlight active child
             val isActive = child.id == activeId

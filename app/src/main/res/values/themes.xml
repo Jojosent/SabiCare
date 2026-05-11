@@ -146,6 +146,9 @@
     <!-- Widget Styles - Minimalist Components                           -->
     <!-- ═══════════════════════════════════════════════════════════════ -->
 
+    <!-- Base Widget Style to prevent AAPT errors with dot notation -->
+    <style name="Widget.SabiCare" parent="" />
+
     <style name="Widget.SabiCare.Card" parent="Widget.Material3.CardView.Elevated">
         <item name="cardCornerRadius">16dp</item>
         <item name="cardElevation">0dp</item>
@@ -223,7 +226,7 @@
     </style>
 
     <!-- Icon Container Style -->
-    <style name="Widget.SabiCare.IconContainer">
+    <style name="Widget.SabiCare.IconContainer" parent="Widget.SabiCare">
         <item name="android:background">@drawable/bg_icon_circle</item>
         <item name="android:padding">10dp</item>
     </style>
