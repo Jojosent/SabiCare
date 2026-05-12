@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.example.sabicare_j.R
 import com.example.sabicare_j.SabiCareApplication
 import com.example.sabicare_j.data.local.entities.MeasurementType
 import com.example.sabicare_j.data.repository.MeasurementRepository
@@ -61,7 +62,7 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                 val lastValueText = if (latest != null) {
                     "${formatValue(latest.value)} ${type.unit}"
                 } else {
-                    "Деректер жоқ"
+                    getApplication<SabiCareApplication>().getString(R.string.no_record)
                 }
 
                 ReminderItem(
@@ -161,11 +162,11 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     fun getAgeString(birthDateMillis: Long): String {
         val diffMs = System.currentTimeMillis() - birthDateMillis
         val days = TimeUnit.MILLISECONDS.toDays(diffMs).toInt()
+        val ctx = getApplication<SabiCareApplication>()
         return when {
-            days < 7 -> "$days күн"
-            days < 30 -> "${days / 7} апта"
-            days < 365 -> "${days / 30} ай"
-            else -> "${days / 365} жас ${(days % 365) / 30} ай"
+            days < 7 -> ctx.getString(R.string.child_age_days, days)
+            days < 30 -> ctx.getString(R.string.child_age_weeks, days / 7)
+            else -> ctx.getString(R.string.child_age_months, days / 30)
         }
     }
 }

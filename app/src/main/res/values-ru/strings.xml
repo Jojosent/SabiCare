@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">SabiCare</string>
+    <string name="app_tagline">Развитие вашего ребёнка — наша забота</string>
 
-    <!-- Bottom Navigation -->
     <string name="nav_home">Главная</string>
     <string name="nav_tracker">Трекер</string>
     <string name="nav_results">Результаты</string>
     <string name="nav_profile">Профиль</string>
-    <string name="about">О приложении</string>
-    <string name="greeting">Сәлем! Балаңыздың жағдайын бақылаңыз 👶</string>
 
-    <string name="reminders">Еске салулар</string>
-
-    <string name="reminders_subtitle">Бүгінгі маңызды істер</string>
-
-    <string name="useful_articles">Пайдалы мақалалар</string>
-
-    <string name="vitamins_and_medications">Дәрумендер және дәрілер</string>
     <string name="add_entry">Добавить запись</string>
     <string name="add_child">Добавить ребёнка</string>
     <string name="settings">Настройки</string>
@@ -25,77 +16,199 @@
     <string name="delete">Удалить</string>
     <string name="edit">Редактировать</string>
     <string name="back">Назад</string>
+    <string name="next">Далее</string>
+    <string name="start">Начать</string>
+    <string name="skip">Пропустить</string>
+    <string name="close">Закрыть</string>
+    <string name="ok">OK</string>
+    <string name="logout">Выйти</string>
 
-    <!-- Child -->
+    <string name="login">Войти</string>
+    <string name="register">Регистрация</string>
+    <string name="email">Email</string>
+    <string name="password">Пароль</string>
+    <string name="confirm_password">Подтвердите пароль</string>
+    <string name="your_name">Ваше имя</string>
+    <string name="fill_all_fields">Заполните все поля</string>
+    <string name="passwords_not_match">Пароли не совпадают</string>
+    <string name="password_too_short">Минимум 6 символов</string>
+    <string name="enter_your_name">Введите ваше имя</string>
+    <string name="error_with_message">Ошибка: %1$s</string>
+
+    <string name="splash_subtitle">Развитие вашего ребёнка — наша забота</string>
+
+    <string name="greeting">Привет! 👋</string>
+    <string name="home_subtitle">Следите за здоровьем малыша</string>
+    <string name="reminders_title">Напоминания</string>
+    <string name="reminders_today_due">Сегодня пора замерить</string>
+    <string name="reminders_all_set">Все замеры по плану ✓</string>
+    <string name="empty_reminders_hint">Добавьте ребёнка — напоминания появятся здесь</string>
+    <string name="featured_article_title">Статья дня</string>
+    <string name="featured_article_subtitle">Рекомендации врачей</string>
+    <string name="useful_articles">Полезные статьи</string>
+    <string name="articles_subtitle">WHO · CDC · UNICEF · Mayo Clinic</string>
+    <string name="medications_title">Витамины и препараты</string>
+    <string name="medications_subtitle">Каждая карточка ведёт к врачебному источнику</string>
+    <string name="read_minutes">%1$d мин чтения</string>
+    <string name="minutes_short">%1$d мин</string>
+    <string name="boy">Мальчик</string>
+    <string name="girl">Девочка</string>
+    <string name="add_child_subtitle">Введите имя и дату рождения</string>
+
+    <string name="qa_add">Добавить</string>
+    <string name="qa_tracker">Трекер</string>
+    <string name="qa_child">Ребёнок</string>
+
     <string name="child_name">Имя ребёнка</string>
     <string name="child_birth_date">Дата рождения</string>
     <string name="child_gender">Пол</string>
-    <string name="gender_male">Мальчик</string>
-    <string name="gender_female">Девочка</string>
+    <string name="gender_male">👦 Мальчик</string>
+    <string name="gender_female">👧 Девочка</string>
     <string name="child_photo">Фото</string>
+    <string name="child_photo_optional">Фото (необязательно)</string>
+    <string name="pick_photo">Выбрать фото</string>
+    <string name="remove_photo">Удалить фото</string>
     <string name="child_age_days">%d дней</string>
     <string name="child_age_weeks">%d недель</string>
     <string name="child_age_months">%d месяцев</string>
+    <string name="name_hint">Например: Айдар</string>
+    <string name="edit_child">Редактировать ребёнка</string>
+    <string name="onboarding_welcome">Здравствуйте! 👋</string>
+    <string name="onboarding_first_subtitle">Добавьте малыша, чтобы начать</string>
+    <string name="onboarding_first_hint">Имя, дата рождения, пол — позже можно изменить</string>
+    <string name="add_later">Добавить позже</string>
+    <string name="select_gender">Выберите пол</string>
 
-    <!-- Measurement Types -->
+    <string name="new_entry">Новая запись</string>
+    <string name="parameter">Параметр</string>
+    <string name="value_with_unit">Значение (%1$s)</string>
+    <string name="date">Дата</string>
+    <string name="note_optional">Заметка (необязательно)</string>
+    <string name="enter_value">Введите значение</string>
+    <string name="invalid_value">Некорректное значение</string>
+    <string name="add_child_first">Сначала добавьте ребёнка</string>
+    <string name="saved">✅ Сохранено</string>
+
     <string name="type_height">Рост</string>
     <string name="type_weight">Вес</string>
     <string name="type_feedings_count">Кормлений в день</string>
     <string name="type_calories">Калории</string>
     <string name="type_sleep_duration">Сон</string>
+    <string name="type_feedings_short">Кормление</string>
 
-    <!-- Units -->
     <string name="unit_cm">см</string>
     <string name="unit_grams">г</string>
     <string name="unit_times">раз</string>
     <string name="unit_kcal">ккал</string>
     <string name="unit_minutes">мин</string>
 
-    <!-- Tracker Status -->
+    <string name="tracker_title">Трекер</string>
+    <string name="select_child">Выберите ребёнка</string>
+    <string name="all_parameters">Все параметры</string>
+    <string name="tap_card_to_add">Нажмите на карточку, чтобы добавить значение</string>
     <string name="status_due_now">Пора замерить</string>
     <string name="status_days_left">Следующий через %d дн.</string>
     <string name="status_overdue">Просрочено на %d дн.</string>
-    <string name="last_measured">Последний замер: %s</string>
-    <string name="no_measurements_yet">Ещё нет данных</string>
+    <string name="status_no_record">Нет записей</string>
+    <string name="status_next_in">Следующий через %d дн.</string>
+    <string name="last_measured">Последний: %s</string>
+    <string name="no_measurements_yet">Данных пока нет</string>
+    <string name="no_record">Нет записи</string>
+    <string name="please_add_child">Сначала добавьте ребёнка</string>
 
-    <!-- Results -->
+    <string name="results_title">Результаты</string>
+    <string name="compare_who">Сравнение с нормами ВОЗ</string>
+    <string name="results_subtitle">Последний замер + норма + тренд</string>
+    <string name="results_empty">Добавьте ребёнка и замеры — результаты появятся здесь</string>
     <string name="norm_label">Норма</string>
-    <string name="your_value">Ваше значение</string>
-    <string name="export_pdf">Экспорт в PDF</string>
+    <string name="norm_range_format">Норма: %1$s – %2$s %3$s · среднее %4$s</string>
+    <string name="compliance">Соответствие: %1$d%%</string>
     <string name="status_normal">Норма ✓</string>
-    <string name="status_below_norm">Ниже нормы ⚠</string>
-    <string name="status_above_norm">Выше нормы ⚠</string>
-    <string name="status_critical">Требует внимания !</string>
+    <string name="status_below_norm">Ниже ⚠</string>
+    <string name="status_above_norm">Выше ⚠</string>
+    <string name="status_critical">Внимание !</string>
     <string name="no_data_for_chart">Недостаточно данных для графика</string>
+    <string name="export_pdf">PDF отчёт</string>
+    <string name="pdf_dialog_title">📄 PDF Отчёт</string>
+    <string name="pdf_dialog_subtitle">За какой период составить отчёт?</string>
+    <string name="generate">Создать</string>
+    <string name="days_n">%1$d дн.</string>
+    <string name="pdf_error">Ошибка PDF: %1$s</string>
 
-    <!-- Home -->
-    <string name="reminders_title">Напоминания</string>
-    <string name="articles_title">Полезные статьи</string>
-    <string name="medications_title">Витамины и препараты</string>
-
-    <!-- Profile -->
+    <string name="profile_title">Профиль</string>
     <string name="my_children">Мои дети</string>
-    <string name="app_settings">Настройки приложения</string>
-    <string name="language">Язык</string>
-    <string name="theme">Тема</string>
-    <string name="notifications">Уведомления</string>
+    <string name="children_count_tap">%1$d детей · нажмите для переключения</string>
+    <string name="user_default">Пользователь</string>
+    <string name="account">Аккаунт</string>
+    <string name="active_child_none">Активный ребёнок не выбран</string>
+    <string name="active_child_none_hint">Выберите из списка ниже или добавьте нового</string>
+    <string name="active">активный</string>
+    <string name="no_children_yet">Дети ещё не добавлены. Нажмите кнопку ниже.</string>
+    <string name="settings_subtitle">Язык, тема, уведомления, приватность</string>
+    <string name="sign_out_subtitle">Выйти из аккаунта</string>
+    <string name="confirm_sign_out_title">Выйти</string>
+    <string name="confirm_sign_out_msg">Выйти из аккаунта? Локальные данные будут очищены.</string>
+    <string name="confirm_delete_child_title">Удалить ребёнка</string>
+    <string name="confirm_delete_child_msg">%1$s будет удалён вместе со всеми замерами. Продолжить?</string>
+
+    <string name="settings_title">Настройки</string>
+    <string name="settings_account">Аккаунт</string>
+    <string name="settings_appearance">Внешний вид</string>
+    <string name="settings_notifications">Уведомления</string>
+    <string name="settings_privacy">Приватность</string>
+    <string name="settings_support">Поддержка</string>
+    <string name="settings_name">Имя</string>
+    <string name="not_set">не указано</string>
+    <string name="settings_theme">Тема</string>
+    <string name="settings_language">Язык</string>
+    <string name="notifications_all">Все уведомления</string>
+    <string name="notifications_all_subtitle">Общий переключатель</string>
+    <string name="notifications_reminders">Напоминания о замерах</string>
+    <string name="notifications_reminders_subtitle">Уведомлять, когда пора замерить</string>
+    <string name="notifications_growth">Отклонения от нормы</string>
+    <string name="notifications_growth_subtitle">Когда показатель выходит за норму</string>
+    <string name="privacy_policy">Политика конфиденциальности</string>
+    <string name="delete_account">Удалить аккаунт</string>
+    <string name="delete_account_subtitle">Все данные будут безвозвратно удалены</string>
+    <string name="delete_account_confirm">Все данные, включая профили детей и замеры, будут удалены. Это действие нельзя отменить.</string>
+    <string name="reauth_required">Требуется повторный вход: %1$s</string>
     <string name="about_app">О приложении</string>
-    <string name="sign_out">Выйти из аккаунта</string>
-    <string name="sign_out_disabled_hint">Вход через аккаунт будет добавлен позже</string>
+    <string name="version_label">Версия 1.0.0</string>
+    <string name="about_body">SabiCare — приложение для отслеживания развития новорождённых. Данные рассчитываются на основе стандартов ВОЗ.\n\n© 2024 SabiCare</string>
+    <string name="feedback_title">Отправить отзыв</string>
+    <string name="rate_app">Оценить приложение</string>
+    <string name="rate_app_on_play">В Google Play</string>
 
-    <!-- Onboarding -->
-    <string name="onboarding_title">Добро пожаловать в SabiCare</string>
-    <string name="onboarding_subtitle">Добавьте профиль вашего малыша, чтобы начать</string>
-    <string name="onboarding_add_baby">Добавить малыша</string>
+    <string name="choose_theme">Выбор темы</string>
+    <string name="choose_language">Выбор языка</string>
+    <string name="theme_light">🌞 Светлая</string>
+    <string name="theme_dark">🌙 Тёмная</string>
+    <string name="theme_system">📱 Системная</string>
+    <string name="lang_kk">🇰🇿 Қазақша</string>
+    <string name="lang_ru">🇷🇺 Русский</string>
+    <string name="lang_en">🇬🇧 English</string>
+    <string name="change_name_title">Изменить имя</string>
+    <string name="saved_short">Сохранено</string>
 
-    <!-- Errors / Empty states -->
+    <string name="ob_title_1">Отслеживайте развитие ребёнка</string>
+    <string name="ob_subtitle_1">Рост, вес, сон — всё в одном месте</string>
+    <string name="ob_title_2">Сравнение с нормами ВОЗ</string>
+    <string name="ob_subtitle_2">Каждый замер сверяется с официальными нормами</string>
+    <string name="ob_title_3">Статьи и советы</string>
+    <string name="ob_subtitle_3">Источники: WHO · CDC · UNICEF · Mayo Clinic</string>
+
+    <string name="notif_channel_reminders">Напоминания о замерах</string>
+    <string name="notif_channel_reminders_desc">Напомнит, когда пора сделать замер</string>
+    <string name="notif_channel_alerts">Оповещения о развитии</string>
+    <string name="notif_channel_alerts_desc">Оповещает, если показатель вне нормы</string>
+    <string name="notif_reminder_title">Пора замерить: %1$s</string>
+    <string name="notif_reminder_text">%1$s — последняя запись %2$s назад</string>
+    <string name="notif_growth_alert_title">%1$s: вне нормы</string>
+    <string name="notif_growth_alert_text">%1$s: %2$s %3$s вне диапазона ВОЗ</string>
+
     <string name="error_name_required">Введите имя ребёнка</string>
     <string name="error_date_required">Выберите дату рождения</string>
     <string name="error_gender_required">Выберите пол</string>
     <string name="error_value_required">Введите значение</string>
     <string name="error_invalid_value">Некорректное значение</string>
-
-    <string name="edit_child">Балаңызды өңдеу</string>
-    <string name="onboarding_start">Бастау</string>
-
 </resources>
