@@ -1,10 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.google.services)
     id("kotlin-kapt")
-    id("org.jetbrains.kotlin.kapt")
-    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -41,7 +40,8 @@ android {
     }
 
     buildFeatures {
-        viewBinding = true
+        compose = true
+        viewBinding = false
     }
 }
 
@@ -56,12 +56,29 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
+    implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.fragment.ktx)
 
-    // Navigation
+    // Navigation (XML and Fragments)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+
+    // Jetpack Compose
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.graphics)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    debugImplementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.material.icons.extended)
+    implementation(libs.androidx.compose.foundation)
+    implementation(libs.androidx.compose.runtime.livedata)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+
+    // Coil — load images from URLs over the internet
+    implementation(libs.coil.compose)
 
     // Room
     implementation(libs.androidx.room.runtime)
@@ -76,19 +93,13 @@ dependencies {
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)
-
-    // Charts
-    implementation(libs.mpandroidchart)
-
-    // Glide
-    implementation(libs.glide)
-    kapt(libs.glide.compiler) // Cleaned this up to use the Version Catalog
+    implementation(libs.kotlinx.coroutines.play.services)
 
     // DataStore
     implementation(libs.androidx.datastore.preferences)
 
-    // PDF
-    implementation(libs.itextg)
+    // WorkManager (for scheduled notifications)
+    implementation(libs.androidx.work.runtime.ktx)
 
     // Testing
     testImplementation(libs.junit)

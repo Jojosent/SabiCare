@@ -2,11 +2,12 @@ package com.example.sabicare_j
 
 import android.app.Application
 import android.content.Context
-import androidx.appcompat.app.AppCompatDelegate
 import com.example.sabicare_j.data.local.AppDatabase
 import com.example.sabicare_j.data.repository.ChildRepository
 import com.example.sabicare_j.data.repository.MeasurementRepository
 import com.example.sabicare_j.utils.LocaleHelper
+import com.example.sabicare_j.utils.NotificationScheduler
+import com.example.sabicare_j.utils.ThemeManager
 
 class SabiCareApplication : Application() {
 
@@ -18,23 +19,22 @@ class SabiCareApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        applyStoredTheme()
+        ThemeManager.init(this)
+        NotificationScheduler.ensureChannels(this)
+        // Schedule daily notification check (idempotent — KEEP policy)
+        if (notificationsEnabled()) {
+            NotificationScheduler.schedule(this)
+        }
     }
 
     override fun attachBaseContext(base: Context) {
-        val lang = LocaleHelper.getSavedLocale(base) ?: "kk"
+        val lang = LocaleHelper.getSavedLocale(base)
         super.attachBaseContext(LocaleHelper.applyLocale(base, lang))
     }
 
-    private fun applyStoredTheme() {
+    private fun notificationsEnabled(): Boolean {
         val prefs = getSharedPreferences("sabicare_prefs_simple", MODE_PRIVATE)
-        val theme = prefs.getString("theme", "system") ?: "system"
-        val mode = when (theme) {
-            "light" -> AppCompatDelegate.MODE_NIGHT_NO
-            "dark"  -> AppCompatDelegate.MODE_NIGHT_YES
-            else    -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-        }
-        AppCompatDelegate.setDefaultNightMode(mode)
+        return prefs.getBoolean("notifications_enabled", true)
     }
 
     // Called on logout and on new-user login to wipe the previous user's local data

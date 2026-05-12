@@ -1,45 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">SabiCare</string>
+    <string name="app_tagline">Балаңыздың дамуы — біздің қамқорымызда</string>
 
-    <string name="nav_home">Басты бет</string>
+    <string name="nav_home">Басты</string>
     <string name="nav_tracker">Трекер</string>
     <string name="nav_results">Нәтижелер</string>
     <string name="nav_profile">Профиль</string>
-    <string name="greeting">Сәлем! Балаңыздың жағдайын бақылаңыз 👶</string>
 
-    <string name="reminders">Еске салулар</string>
-
-    <string name="reminders_subtitle">Бүгінгі маңызды істер</string>
-
-    <string name="useful_articles">Пайдалы мақалалар</string>
-
-    <string name="vitamins_and_medications">Дәрумендер және дәрілер</string>
-    <string name="about">О приложении</string>
     <string name="add_entry">Жазба қосу</string>
-    <string name="add_child">Баланы қосу</string>
-    <string name="settings">Баптаулар</string>
+    <string name="add_child">Бала қосу</string>
+    <string name="settings">Параметрлер</string>
     <string name="save">Сақтау</string>
     <string name="cancel">Бас тарту</string>
-    <string name="delete">Өшіру</string>
+    <string name="delete">Жою</string>
     <string name="edit">Өңдеу</string>
     <string name="back">Артқа</string>
+    <string name="next">Әрі қарай</string>
+    <string name="start">Бастау</string>
+    <string name="skip">Өткізіп жіберу</string>
+    <string name="close">Жабу</string>
+    <string name="ok">Жарайды</string>
+    <string name="logout">Шығу</string>
 
-    <string name="child_name">Баланың есімі</string>
-    <string name="child_birth_date">Туған күні</string>
+    <string name="login">Кіру</string>
+    <string name="register">Тіркелу</string>
+    <string name="email">Email</string>
+    <string name="password">Құпия сөз</string>
+    <string name="confirm_password">Құпия сөзді растау</string>
+    <string name="your_name">Атыңыз</string>
+    <string name="fill_all_fields">Барлық өрістерді толтырыңыз</string>
+    <string name="passwords_not_match">Құпия сөздер сәйкес келмейді</string>
+    <string name="password_too_short">Кемінде 6 таңба</string>
+    <string name="enter_your_name">Атыңызды енгізіңіз</string>
+    <string name="error_with_message">Қате: %1$s</string>
+
+    <string name="splash_subtitle">Балаңыздың дамуы — біздің қамқорымызда</string>
+
+    <string name="greeting">Сәлем! 👋</string>
+    <string name="home_subtitle">Балаңыздың жағдайын бақылаңыз</string>
+    <string name="reminders_title">Еске салулар</string>
+    <string name="reminders_today_due">Бүгін өлшеу уақыты келді</string>
+    <string name="reminders_all_set">Барлық өлшемдер жоспарда ✓</string>
+    <string name="empty_reminders_hint">Алдымен баланы қосыңыз — еске салулар сонда көрсетіледі</string>
+    <string name="featured_article_title">Күн басты мақаласы</string>
+    <string name="featured_article_subtitle">Дәрігерлер ұсынатын материалдар</string>
+    <string name="useful_articles">Пайдалы мақалалар</string>
+    <string name="articles_subtitle">WHO · CDC · UNICEF · Mayo Clinic</string>
+    <string name="medications_title">Витаминдер мен препараттар</string>
+    <string name="medications_subtitle">Әр карточка дәрігер дереккөзіне сілтейді</string>
+    <string name="read_minutes">%1$d мин оқу</string>
+    <string name="minutes_short">%1$d мин</string>
+    <string name="boy">Ұл бала</string>
+    <string name="girl">Қыз бала</string>
+    <string name="add_child_subtitle">Атын, туылған күнін енгізіңіз</string>
+
+    <string name="qa_add">Қосу</string>
+    <string name="qa_tracker">Трекер</string>
+    <string name="qa_child">Бала</string>
+
+    <string name="child_name">Баланың аты</string>
+    <string name="child_birth_date">Туылған күні</string>
     <string name="child_gender">Жынысы</string>
-    <string name="gender_male">Ұл</string>
-    <string name="gender_female">Қыз</string>
+    <string name="gender_male">👦 Ұл бала</string>
+    <string name="gender_female">👧 Қыз бала</string>
     <string name="child_photo">Фото</string>
+    <string name="child_photo_optional">Фото (міндетті емес)</string>
+    <string name="pick_photo">Сурет таңдау</string>
+    <string name="remove_photo">Суретті өшіру</string>
     <string name="child_age_days">%d күн</string>
     <string name="child_age_weeks">%d апта</string>
     <string name="child_age_months">%d ай</string>
+    <string name="name_hint">Мысалы: Айдар</string>
+    <string name="edit_child">Баланы өңдеу</string>
+    <string name="onboarding_welcome">Сәлеметсіз бе! 👋</string>
+    <string name="onboarding_first_subtitle">Бастау үшін бір нәресте қосыңыз</string>
+    <string name="onboarding_first_hint">Аты, туылған күні, жынысы — артын кез келген уақытта өңдеуге болады</string>
+    <string name="add_later">Кейінірек қосу</string>
+    <string name="select_gender">Жынысын таңдаңыз</string>
+
+    <string name="new_entry">Жаңа жазба</string>
+    <string name="parameter">Параметр</string>
+    <string name="value_with_unit">Мәні (%1$s)</string>
+    <string name="date">Күні</string>
+    <string name="note_optional">Ескерту (міндетті емес)</string>
+    <string name="enter_value">Мән енгізіңіз</string>
+    <string name="invalid_value">Дұрыс мән енгізіңіз</string>
+    <string name="add_child_first">Алдымен баланы қосыңыз</string>
+    <string name="saved">✅ Сақталды</string>
 
     <string name="type_height">Бойы</string>
     <string name="type_weight">Салмағы</string>
     <string name="type_feedings_count">Күндізгі тамақтандыру саны</string>
     <string name="type_calories">Калориялар</string>
     <string name="type_sleep_duration">Ұйқы</string>
+    <string name="type_feedings_short">Емізу</string>
 
     <string name="unit_cm">см</string>
     <string name="unit_grams">г</string>
@@ -47,45 +102,113 @@
     <string name="unit_kcal">ккал</string>
     <string name="unit_minutes">мин</string>
 
-    <string name="status_due_now">Өлшеу уақыты келді</string>
-    <string name="status_days_left">Келесі өлшеуге %d күн қалды</string>
-    <string name="status_overdue">Өлшеу уақыты %d күнге кешікті</string>
-    <string name="last_measured">Соңғы өлшеу: %s</string>
+    <string name="tracker_title">Трекер</string>
+    <string name="select_child">Баланы таңдаңыз</string>
+    <string name="all_parameters">Барлық параметрлер</string>
+    <string name="tap_card_to_add">Карточкаға басып, жаңа мән қосыңыз</string>
+    <string name="status_due_now">Бүгін өлшеу уақыты</string>
+    <string name="status_days_left">Келесі %d күннен кейін</string>
+    <string name="status_overdue">%d күн кешіктірілді</string>
+    <string name="status_no_record">Жазба жоқ</string>
+    <string name="status_next_in">Келесі %d күннен кейін</string>
+    <string name="last_measured">Соңғы: %s</string>
     <string name="no_measurements_yet">Деректер әлі жоқ</string>
+    <string name="no_record">Жазба жоқ</string>
+    <string name="please_add_child">Алдымен баланы қосыңыз</string>
 
+    <string name="results_title">Нәтижелер</string>
+    <string name="compare_who">ДДҰ нормаларымен салыстыру</string>
+    <string name="results_subtitle">Әр карточка соңғы өлшем + норма + тренд</string>
+    <string name="results_empty">Бала қосыңыз және өлшемдер жасаңыз — нәтижелер осы жерде көрсетіледі</string>
     <string name="norm_label">Қалыпты жағдай (Норма)</string>
-    <string name="your_value">Сіздің көрсеткішіңіз</string>
-    <string name="export_pdf">PDF-ке экспорттау</string>
+    <string name="norm_range_format">Норма: %1$s – %2$s %3$s · орташа %4$s</string>
+    <string name="compliance">Сәйкестік: %1$d%%</string>
     <string name="status_normal">Қалыпты ✓</string>
-    <string name="status_below_norm">Нормадан төмен ⚠</string>
-    <string name="status_above_norm">Нормадан жоғары ⚠</string>
-    <string name="status_critical">Назар аударуды қажет етеді !</string>
+    <string name="status_below_norm">Төмен ⚠</string>
+    <string name="status_above_norm">Жоғары ⚠</string>
+    <string name="status_critical">Назар !</string>
     <string name="no_data_for_chart">График үшін деректер жеткіліксіз</string>
+    <string name="export_pdf">PDF есеп</string>
+    <string name="pdf_dialog_title">📄 PDF Есебі</string>
+    <string name="pdf_dialog_subtitle">Қандай кезеңге есеп жасау керек?</string>
+    <string name="generate">Жасау</string>
+    <string name="days_n">%1$d күн</string>
+    <string name="pdf_error">PDF қате: %1$s</string>
 
-    <string name="reminders_title">Еске салғыштар</string>
-    <string name="articles_title">Пайдалы мақалалар</string>
-    <string name="medications_title">Дәрумендер мен дәрі-дәрмектер</string>
-
+    <string name="profile_title">Профиль</string>
     <string name="my_children">Менің балаларым</string>
-    <string name="app_settings">Қосымша баптаулары</string>
-    <string name="language">Тіл</string>
-    <string name="theme">Тақырып</string>
-    <string name="notifications">Хабарландырулар</string>
+    <string name="children_count_tap">%1$d бала · картаға басып ауыстырыңыз</string>
+    <string name="user_default">Пайдаланушы</string>
+    <string name="account">Аккаунт</string>
+    <string name="active_child_none">Белсенді бала таңдалмаған</string>
+    <string name="active_child_none_hint">Төмендегі тізімнен таңдаңыз немесе жаңасын қосыңыз</string>
+    <string name="active">белсенді</string>
+    <string name="no_children_yet">Әлі бала қосылмаған. Төмендегі түймені басыңыз.</string>
+    <string name="settings_subtitle">Тіл, тема, хабарландырулар, құпиялылық</string>
+    <string name="sign_out_subtitle">Есептік жазбадан шығу</string>
+    <string name="confirm_sign_out_title">Шығу</string>
+    <string name="confirm_sign_out_msg">Есептік жазбадан шығасыз ба? Жергілікті деректер тазартылады.</string>
+    <string name="confirm_delete_child_title">Баланы жою</string>
+    <string name="confirm_delete_child_msg">%1$s барлық өлшеулерімен бірге жойылады. Жалғастыру?</string>
+
+    <string name="settings_title">Параметрлер</string>
+    <string name="settings_account">Аккаунт</string>
+    <string name="settings_appearance">Көрініс</string>
+    <string name="settings_notifications">Хабарландырулар</string>
+    <string name="settings_privacy">Құпиялылық</string>
+    <string name="settings_support">Қолдау</string>
+    <string name="settings_name">Аты</string>
+    <string name="not_set">көрсетілмеген</string>
+    <string name="settings_theme">Тема</string>
+    <string name="settings_language">Тіл</string>
+    <string name="notifications_all">Барлық хабарландырулар</string>
+    <string name="notifications_all_subtitle">Жалпы қосу/өшіру</string>
+    <string name="notifications_reminders">Өлшем еске салулары</string>
+    <string name="notifications_reminders_subtitle">Өлшем уақыты келгенде хабарлау</string>
+    <string name="notifications_growth">Нормадан ауытқу</string>
+    <string name="notifications_growth_subtitle">Көрсеткіш нормадан тыс болғанда</string>
+    <string name="privacy_policy">Құпиялылық саясаты</string>
+    <string name="delete_account">Аккаунтты жою</string>
+    <string name="delete_account_subtitle">Барлық деректер біржола жойылады</string>
+    <string name="delete_account_confirm">Барлық деректер, оның ішінде балалар профилі мен өлшемдер жойылады. Бұл әрекетті қайтару мүмкін емес.</string>
+    <string name="reauth_required">Қайта кіруді сұранады: %1$s</string>
     <string name="about_app">Қосымша туралы</string>
-    <string name="sign_out">Аккаунттан шығу</string>
-    <string name="sign_out_disabled_hint">Аккаунт арқылы кіру кейінірек қосылады</string>
+    <string name="version_label">Нұсқа 1.0.0</string>
+    <string name="about_body">SabiCare — жаңа туылған нәрестелердің дамуын бақылауға арналған қосымша. Деректер ДДҰ (WHO) стандарттары негізінде есептеледі.\n\n© 2024 SabiCare</string>
+    <string name="feedback_title">Пікір жіберу</string>
+    <string name="rate_app">Қосымшаны бағалау</string>
+    <string name="rate_app_on_play">Google Play-де</string>
 
-    <string name="onboarding_title">SabiCare қосымшасына қош келдіңіз</string>
-    <string name="onboarding_subtitle">Бастау үшін балаңыздың профилін қосыңыз</string>
-    <string name="onboarding_add_baby">Бөпені қосу</string>
-    <string name="onboarding_start">Бастау</string>
+    <string name="choose_theme">Тема таңдау</string>
+    <string name="choose_language">Тіл таңдау</string>
+    <string name="theme_light">🌞 Жарық</string>
+    <string name="theme_dark">🌙 Қараңғы</string>
+    <string name="theme_system">📱 Жүйелік</string>
+    <string name="lang_kk">🇰🇿 Қазақша</string>
+    <string name="lang_ru">🇷🇺 Русский</string>
+    <string name="lang_en">🇬🇧 English</string>
+    <string name="change_name_title">Атыңызды өзгерту</string>
+    <string name="saved_short">Сақталды</string>
 
-    <string name="error_name_required">Баланың есімін енгізіңіз</string>
-    <string name="error_date_required">Туған күнін таңдаңыз</string>
+    <string name="ob_title_1">Балаңыздың дамуын бақылаңыз</string>
+    <string name="ob_subtitle_1">Бойы, салмағы, ұйқысы — бәрі бір жерде</string>
+    <string name="ob_title_2">ДДҰ нормаларымен салыстыру</string>
+    <string name="ob_subtitle_2">Әр өлшеміңіз ресми стандарттармен салыстырылады</string>
+    <string name="ob_title_3">Мақалалар және кеңестер</string>
+    <string name="ob_subtitle_3">WHO · CDC · UNICEF · Mayo Clinic дереккөздерінен</string>
+
+    <string name="notif_channel_reminders">Өлшем еске салулары</string>
+    <string name="notif_channel_reminders_desc">Өлшем уақыты келгенде хабарлайды</string>
+    <string name="notif_channel_alerts">Даму ескертулері</string>
+    <string name="notif_channel_alerts_desc">Көрсеткіш нормадан тыс болғанда ескертеді</string>
+    <string name="notif_reminder_title">%1$s өлшеу уақыты</string>
+    <string name="notif_reminder_text">%1$s — соңғы жазба %2$s бұрын</string>
+    <string name="notif_growth_alert_title">%1$s: нормадан тыс</string>
+    <string name="notif_growth_alert_text">%1$s: %2$s %3$s ДДҰ ауқымынан тыс</string>
+
+    <string name="error_name_required">Баланың атын енгізіңіз</string>
+    <string name="error_date_required">Туылған күнін таңдаңыз</string>
     <string name="error_gender_required">Жынысын таңдаңыз</string>
     <string name="error_value_required">Мәнді енгізіңіз</string>
     <string name="error_invalid_value">Қате мән</string>
-
-    <string name="edit_child">Бала мәліметтерін өңдеу</string>
-
 </resources>
